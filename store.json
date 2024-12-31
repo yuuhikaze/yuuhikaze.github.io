@@ -1,0 +1,33 @@
+{
+  "name": "Steven Ilan Merino Coral",
+  "headshot": "static/images/PXL_20240514_192416281.jpg",
+  "personal_information": {
+    "phone": "+593 99 536 4075",
+    "email": "steve_merino@proton.me",
+    "linked_in": "https://www.linkedin.com/in/steven-merino-3453a0344",
+    "github": "https://github.com/yuuhikaze",
+    "website": "https://yuuhikaze.github.io",
+    "languages": "Spanish (native), english (fluent), japanese (basic)"
+  },
+  "soft_skills": "Leadership, perseverance, teamwork, creativity, integrity, adaptability.",
+  "hard_skills": [
+    "Installation, configuration and manteinance of Debian or Arch based systems.",
+    "Server hosting and management.",
+    "Database infraestructure administration.",
+    "Knowledgeable of design patterns, algorithms and clean code paradigms.",
+    "Capable of building native and web applications.",
+    "Proficient in media conceptualization, design and production."
+  ],
+  "experience": null,
+  "education": [
+    {
+      "degree": "Bachelor’s degree in Computer Science",
+      "institution": "Universidad San Francisco de Quito",
+      "description": "Coursing at the moment.",
+      "period": "2023-202?"
+    }
+  ],
+  "certificates": null,
+  "academic_interests": "Game development, simulations, data science, cybersecurity, computer graphics.",
+  "personal_interests": "HIIT, MMA, soccer, basketball."
+}
