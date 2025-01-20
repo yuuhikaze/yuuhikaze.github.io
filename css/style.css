@@ -3,6 +3,7 @@
 
 :root {
     --background: #282828;
+    --light-background: #3C3836;
     --foreground: #EBDBB2;
     --blue: #83A598;
     --green: #B8BB26;
@@ -24,9 +25,8 @@ h1 {
 
 .wrap {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 img {
@@ -34,7 +34,20 @@ img {
     outline-offset: 3px;
 }
 
+.header {
+    text-align: center;
+}
+
 .content {
     align-self: flex-start;
     justify-content: left;
+}
+
+.main-pane * {
+    flex: 2;
+    background-color: var(--light-background);
+}
+
+.secondary-pane {
+    flex: 1;
 }
