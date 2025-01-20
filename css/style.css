@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+:root {
+    --background: #282828;
+    --foreground: #EBDBB2;
+    --blue: #83A598;
+    --green: #B8BB26;
+    --purple: #D3869B;
+    --red: #FB4934;
+    --yellow: #FABD2F;
+}
+
+* {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Inter";
+}
+
+h1 {
+    font-family: "Edu NSW ACT Foundation";
+    text-decoration: underline 2px var(--blue) wavy;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+img {
+    outline: 2px solid var(--foreground);
+    outline-offset: 3px;
+}
+
+.content {
+    align-self: flex-start;
+    justify-content: left;
+}

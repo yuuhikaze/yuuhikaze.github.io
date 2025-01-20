@@ -1,0 +1,115 @@
+\documentclass[letterpaper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} % character encoding
+\usepackage[dvipsnames]{xcolor} % colors
+\usepackage{graphicx} % media
+\usepackage{hyperref} % hyperlnks
+\usepackage{setspace} % line spacing
+\usepackage{tabularray} % better tables
+\usepackage{float} % figures and tables placement
+\usepackage[
+    left=$geometry.left$,
+    right=$geometry.right$,
+    bottom=$geometry.bottom$,
+    top=$geometry.top$]
+{geometry} % layout
+$if(font_commands)$
+$for(font_commands)$
+$font_commands$
+$endfor$
+$endif$
+
+% place figures and tables where they are defined
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
+
+% disable indentation
+\setlength\parindent{0pt}
+
+% color hyperlinks
+\hypersetup{colorlinks=true, linkcolor=RoyalBlue, urlcolor=RoyalBlue}
+
+% change line spacing
+$if(linestretch)$
+\setstretch{$linestretch$}
+$endif$
+
+% empty: clears page numbering
+$if(pagestyle)$
+\pagestyle{$pagestyle$}
+$endif$
+
+\begin{document}
+% author's name and revision date
+$if(name)$
+{\Huge $name$}
+\hfill{\it\footnotesize Updated \today}
+$endif$
+\vspace{5pt}
+
+\newlength{\maxwidth}
+\settowidth{\maxwidth}{Personal information}
+
+\begin{tblr}{
+  colspec={@{}Q[r,\the\maxwidth]Q[l]@{}},%@{}https://tex.stackexchange.com/a/16261
+  cells={mode=text},
+  column{1}={fg=OliveGreen}
+}
+    $if(headshot)$
+    \includegraphics[width=\linewidth]{$headshot$} & ~ \\
+    $endif$
+    $if(personal_information)$
+    Personal information & {
+        $if(personal_information.phone)$
+        Phone: $personal_information.phone$ \\
+        $endif$
+        $if(personal_information.email)$
+        Email: \href{mailto:$personal_information.email$}{$personal_information.email$} \\
+        $endif$
+        $if(personal_information.linked_in)$
+        LinkedIn: \href{$personal_information.linked_in$}{$personal_information.linked_in$} \\
+        $endif$
+        $if(personal_information.github)$
+        GitHub: \href{$personal_information.github$}{$personal_information.github$} \\
+        $endif$
+        $if(personal_information.website)$
+        Website: \href{$personal_information.website$}{$personal_information.website$} \\
+        $endif$
+        $if(personal_information.languages)$
+        Languages: $personal_information.languages$ \\
+        $endif$
+    } \\
+    $endif$
+    $if(soft_skills)$
+    Soft skills & $soft_skills$ \\
+    $endif$
+    $if(hard_skills)$
+    Hard skills & {
+        $for(hard_skills)$
+        $hard_skills$ \\
+        $endfor$
+    } \\
+    $endif$
+    $if(experience)$
+    Experience & $experience$ \\ % TODO
+    $endif$
+    $if(education)$
+    Education & {
+        $for(education)$
+        $education.degree$ ($education.period$) \\
+        \textcolor{darkgray}{$education.institution$} \\
+        \textcolor{darkgray}{$education.description$} \\
+        $endfor$
+    } \\
+    $endif$
+    $if(certificates)$
+    Certificates & $certificates$ \\ % TODO
+    $endif$
+    $if(academic_interests)$
+    Academic interests & $academic_interests$ \\
+    $endif$
+    $if(personal_interests)$
+    Personal interests & $personal_interests$ \\
+    $endif$
+\end{tblr}
+\end{document}
