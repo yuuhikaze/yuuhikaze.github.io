@@ -18,7 +18,12 @@
     "Capable of building native and web applications.",
     "Proficient in media conceptualization, design and production."
   ],
-  "experience": null,
+  "experience": [
+    {
+      "description": "Infraestructure intern at UFSQ",
+      "period": "2024/01/08-2024/07/04"
+    }
+  ],
   "education": [
     {
       "degree": "Bachelor’s degree in Computer Science",
