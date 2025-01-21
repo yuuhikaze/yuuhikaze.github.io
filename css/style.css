@@ -61,3 +61,11 @@ img {
 #inactive {
     color: #928374;
 }
+
+code {
+    font-family: "Courier New", monospace;
+    background-color: var(--light-background);
+    color: var(--yellow);
+    padding: 0.05em 0.2em;
+    border-radius: 4px;
+}

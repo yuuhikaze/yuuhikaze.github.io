@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="ChatGPT" />
+  <title>resource-monitoring</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+<script data-external="1" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+</head>
+<body>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 19%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Resource</strong></th>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CPU Usage</strong></td>
+<td><code>top</code></td>
+<td>Displays real-time system processes and CPU usage.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>htop</code></td>
+<td>Enhanced version of <code>top</code> (may require
+installation).</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>mpstat</code></td>
+<td>CPU usage statistics for each core (from <code>sysstat</code>).</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>vmstat</code></td>
+<td>Displays virtual memory statistics (includes CPU).</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>iostat -c</code></td>
+<td>CPU statistics along with disk I/O.</td>
+</tr>
+<tr class="even">
+<td><strong>Memory Usage</strong></td>
+<td><code>free -h</code></td>
+<td>Displays RAM and swap usage in a human-readable format.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>vmstat</code></td>
+<td>Displays memory usage and other system stats.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>ps aux --sort=-%mem</code></td>
+<td>Lists processes by memory usage.</td>
+</tr>
+<tr class="odd">
+<td><strong>Disk Usage</strong></td>
+<td><code>df -h</code></td>
+<td>Shows disk space usage for all mounted filesystems.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>du -sh</code></td>
+<td>Shows disk usage for a specific directory.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>iotop</code></td>
+<td>Interactive real-time I/O monitor (requires root).</td>
+</tr>
+<tr class="even">
+<td><strong>Network Usage</strong></td>
+<td><code>iftop</code></td>
+<td>Displays real-time bandwidth usage by connections.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>nload</code></td>
+<td>Monitors incoming and outgoing network traffic.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>netstat -tuln</code></td>
+<td>Displays network connections, listening ports, etc.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>ss -tuln</code></td>
+<td>Shows socket statistics (more efficient than
+<code>netstat</code>).</td>
+</tr>
+<tr class="even">
+<td><strong>General Monitoring</strong></td>
+<td><code>sar -u 1 5</code></td>
+<td>Collects and reports CPU statistics (requires
+<code>sysstat</code>).</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>glances</code></td>
+<td>Provides an overview of system resources (requires <code>pip</code>
+installation).</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>dstat</code></td>
+<td>General-purpose resource monitor.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>watch -n 1</code></td>
+<td>Runs a command repeatedly at 1-second intervals.</td>
+</tr>
+<tr class="even">
+<td><strong>System Performance</strong></td>
+<td><code>systemd-analyze</code></td>
+<td>Analyzes and reports boot-up performance.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

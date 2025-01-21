@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="ChatGPT" />
+  <title>rpm</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+<script data-external="1" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+</head>
+<body>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 31%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Action</strong></th>
+<th><strong>Command (rpm)</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Install a Package</strong></td>
+<td><code>sudo rpm -ivh &lt;package_file.rpm&gt;</code></td>
+<td>Installs a package from a local <code>.rpm</code> file.</td>
+</tr>
+<tr class="even">
+<td><strong>Upgrade a Package</strong></td>
+<td><code>sudo rpm -Uvh &lt;package_file.rpm&gt;</code></td>
+<td>Installs or upgrades a package from a local <code>.rpm</code>
+file.</td>
+</tr>
+<tr class="odd">
+<td><strong>Remove (Uninstall) a Package</strong></td>
+<td><code>sudo rpm -e &lt;package_name&gt;</code></td>
+<td>Uninstalls the specified package by name.</td>
+</tr>
+<tr class="even">
+<td><strong>Query Installed Packages</strong></td>
+<td><code>rpm -q &lt;package_name&gt;</code></td>
+<td>Checks if a specific package is installed.</td>
+</tr>
+<tr class="odd">
+<td><strong>List All Installed Packages</strong></td>
+<td><code>rpm -qa</code></td>
+<td>Lists all installed RPM packages on the system.</td>
+</tr>
+<tr class="even">
+<td><strong>Query Package Information</strong></td>
+<td><code>rpm -qi &lt;package_name&gt;</code></td>
+<td>Displays detailed information about a specific installed
+package.</td>
+</tr>
+<tr class="odd">
+<td><strong>Query Files Installed by a Package</strong></td>
+<td><code>rpm -ql &lt;package_name&gt;</code></td>
+<td>Lists all files installed by a specific package.</td>
+</tr>
+<tr class="even">
+<td><strong>Query the Package of a File</strong></td>
+<td><code>rpm -qf &lt;file_path&gt;</code></td>
+<td>Shows which package a specific file belongs to.</td>
+</tr>
+<tr class="odd">
+<td><strong>Verify Installed Package Files</strong></td>
+<td><code>rpm -V &lt;package_name&gt;</code></td>
+<td>Verifies the integrity of the files installed by a specific
+package.</td>
+</tr>
+<tr class="even">
+<td><strong>List Package Files with Digest Info</strong></td>
+<td><code>rpm -q --changelog &lt;package_name&gt;</code></td>
+<td>Displays the changelog of a specific installed package.</td>
+</tr>
+<tr class="odd">
+<td><strong>Show Package Dependencies</strong></td>
+<td><code>rpm -qR &lt;package_name&gt;</code></td>
+<td>Displays the dependencies required by a package.</td>
+</tr>
+<tr class="even">
+<td><strong>Check for Package Conflicts</strong></td>
+<td><code>rpm -q --conflicts &lt;package_name&gt;</code></td>
+<td>Shows any conflicting packages for a specific package.</td>
+</tr>
+<tr class="odd">
+<td><strong>Query the Package Version</strong></td>
+<td><code>rpm -q --queryformat &#39;%{VERSION}\n&#39; &lt;package_name&gt;</code></td>
+<td>Displays just the version of the installed package.</td>
+</tr>
+<tr class="even">
+<td><strong>Rebuild RPM Database</strong></td>
+<td><code>sudo rpm --rebuilddb</code></td>
+<td>Rebuilds the RPM package database (useful if it’s corrupted or
+missing).</td>
+</tr>
+<tr class="odd">
+<td><strong>Check if Package is Installed by Name</strong></td>
+<td><code>rpm -q --whatprovides &lt;file_name&gt;</code></td>
+<td>Checks which package provides a specific file.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
