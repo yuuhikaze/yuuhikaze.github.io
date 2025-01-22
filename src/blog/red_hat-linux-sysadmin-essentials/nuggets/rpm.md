@@ -1,5 +1,8 @@
 ---
-author: ChatGPT
+title: rpm
+date: 2025-01-22
+author:
+  - ChatGPT
 ---
 
 | **Action**                                | **Command (rpm)**                                    | **Description**                                                          |

@@ -1,16 +1,12 @@
 ---
-title: |
-  \begin{center}
-  Matemáticas Discretas
-  \end{center}
+title: Matemáticas Discretas
 author:
-  - Steven Merino (00333621)
+  - Steven Merino
 address: |
   \begin{center}
   Colegio de Ciencias e Ingenierías, Universidad San Francisco de Quito USFQ\\
   Campus Cumbayá, Casilla Postal 17-1200-841, Quito 170157, Ecuador.
   \end{center}
-journal: Física I (3738)
 linestretch: 1.15
 header-includes:
     - \usepackage{hanging}
@@ -22,8 +18,6 @@ header-includes:
 ---
 
 # Problema del viajante (TSP)
-
-Uff que esto tomó más tiempo de lo esperado.
 
 ### Justificación
 

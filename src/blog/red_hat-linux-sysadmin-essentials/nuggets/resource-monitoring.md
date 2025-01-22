@@ -1,5 +1,8 @@
 ---
-author: ChatGPT
+title: Resource monitoring
+date: 2025-01-22
+author:
+  - ChatGPT
 ---
 
 | **Resource**           | **Command**           | **Description**                                                         |

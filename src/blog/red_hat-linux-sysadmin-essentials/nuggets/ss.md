@@ -1,4 +1,9 @@
-### `ss` (Socket Stat)
+---
+title: ss (Socket Stat)
+date: 2025-01-22
+author:
+  - ChatGPT
+---
 
 Program for inspecting network connections and socket statistics.
 
