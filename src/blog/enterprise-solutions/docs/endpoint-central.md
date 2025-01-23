@@ -27,3 +27,5 @@ That deletes almost all of the relevant files, what only remains are the service
     ```
 
 That's all! You can now register a new UEMSAgent.
+
+> If you register the new UEMSAgent and later find that the uninstaller script fails, simply repeat the steps mentioned in this section, and the problem will be resolved for future uninstallations.
