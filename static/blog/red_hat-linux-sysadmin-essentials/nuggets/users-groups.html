@@ -5,8 +5,8 @@
         <meta name="generator" content="pandoc" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
                 <meta name="author" content="ChatGPT" />
-                 <meta name="dcterms.date" content="2025-01-22" />
-                  <title>tmux</title>
+                 <meta name="dcterms.date" content="2025-01-27" />
+                  <title>users-groups</title>
         <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -291,126 +291,331 @@ color: #4183c4;
     <body>
                  <header id="title-block-header">
             <div class="left">
-                <h1 class="title">tmux</h1>
+                <h1 class="title">Users and groups</h1>
                             </div>
             <div class="right">
                                 <p class="author">ChatGPT</p>
-                                 <p class="date">2025-01-22</p>
+                                 <p class="date">2025-01-27</p>
                             </div>
         </header>
-          <p><code>tmux</code> is a tool that lets you run and manage
-multiple terminal sessions in a single window, with features like
-session persistence and split panes.</p>
+                 <nav id="TOC" role="doc-toc">
+             <ul>
+<li><a href="#useradd" id="toc-useradd"><code>useradd</code></a></li>
+<li><a href="#userdel" id="toc-userdel"><code>userdel</code></a></li>
+<li><a href="#groupadd" id="toc-groupadd"><code>groupadd</code></a></li>
+<li><a href="#groupdel" id="toc-groupdel"><code>groupdel</code></a></li>
+<li><a href="#usermod" id="toc-usermod"><code>usermod</code></a></li>
+<li><a href="#passwd" id="toc-passwd"><code>passwd</code></a></li>
+<li><a href="#su" id="toc-su"><code>su</code></a></li>
+<li><a href="#groups" id="toc-groups"><code>groups</code></a></li>
+</ul>
+        </nav>
+         <h3 id="useradd"><code>useradd</code></h3>
+<p>Adds a new user to the system. The user will be assigned default
+values unless further options are specified.</p>
 <table>
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 30%" />
-<col style="width: 46%" />
+<col style="width: 38%" />
+<col style="width: 61%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Action</strong></th>
-<th><strong>Key Binding</strong></th>
-<th><strong>Description</strong></th>
+<th>Command</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Prefix (default)</strong></td>
-<td><code>Ctrl + b</code></td>
-<td>Activate tmux command mode.</td>
+<td><code>useradd -m &lt;username&gt;</code></td>
+<td>Creates a user and their home directory.</td>
 </tr>
 <tr class="even">
-<td><strong>Split window horizontally</strong></td>
-<td><code>Ctrl + b</code>, then <code>%</code></td>
-<td>Split the window into two panes horizontally.</td>
+<td><code>useradd -s &lt;shell&gt; &lt;username&gt;</code></td>
+<td>Specifies a shell for the user (e.g., <code>/bin/bash</code>).</td>
 </tr>
 <tr class="odd">
-<td><strong>Split window vertically</strong></td>
-<td><code>Ctrl + b</code>, then <code>&quot;</code></td>
-<td>Split the window into two panes vertically.</td>
-</tr>
-<tr class="even">
-<td><strong>Navigate between panes</strong></td>
-<td><code>Ctrl + b</code>, then arrow key</td>
-<td>Move between panes using arrow keys (up, down, left, right).</td>
-</tr>
-<tr class="odd">
-<td><strong>Resize pane</strong></td>
-<td><code>Ctrl + b</code>, then hold <code>Alt</code> + arrow key</td>
-<td>Resize the current pane.</td>
-</tr>
-<tr class="even">
-<td><strong>Close the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>x</code></td>
-<td>Close the current pane (you will be prompted to confirm).</td>
-</tr>
-<tr class="odd">
-<td><strong>Create a new window</strong></td>
-<td><code>Ctrl + b</code>, then <code>c</code></td>
-<td>Create a new tmux window.</td>
-</tr>
-<tr class="even">
-<td><strong>Switch between windows</strong></td>
-<td><code>Ctrl + b</code>, then <code>n</code> (next) or <code>p</code>
-(previous)</td>
-<td>Switch to the next or previous window.</td>
-</tr>
-<tr class="odd">
-<td><strong>Select a window by number</strong></td>
-<td><code>Ctrl + b</code>, then a number (0-9)</td>
-<td>Jump directly to the window by its number.</td>
-</tr>
-<tr class="even">
-<td><strong>Rename window</strong></td>
-<td><code>Ctrl + b</code>, then <code>,</code></td>
-<td>Rename the current window.</td>
-</tr>
-<tr class="odd">
-<td><strong>Detach from tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>d</code></td>
-<td>Detach from the current tmux session and return to the shell.</td>
-</tr>
-<tr class="even">
-<td><strong>List sessions</strong></td>
-<td><code>Ctrl + b</code>, then <code>s</code></td>
-<td>List all tmux sessions.</td>
-</tr>
-<tr class="odd">
-<td><strong>Attach to an existing session</strong></td>
-<td><code>tmux attach-session -t &lt;session_name&gt;</code></td>
-<td>Attach to a tmux session by name.</td>
-</tr>
-<tr class="even">
-<td><strong>Kill a session</strong></td>
-<td><code>Ctrl + b</code>, then <code>:</code> and type
-<code>kill-session</code></td>
-<td>Kill the current tmux session.</td>
-</tr>
-<tr class="odd">
-<td><strong>Lock tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>l</code></td>
-<td>Lock the tmux session (requires password).</td>
-</tr>
-<tr class="even">
-<td><strong>Scroll mode (copy mode)</strong></td>
-<td><code>Ctrl + b</code>, then <code>[</code></td>
-<td>Enter scroll mode to navigate through the pane history.</td>
-</tr>
-<tr class="odd">
-<td><strong>Exit tmux</strong></td>
-<td>Type <code>exit</code> inside a window or pane</td>
-<td>Exit the tmux session or pane.</td>
-</tr>
-<tr class="even">
-<td><strong>Maximize the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>z</code></td>
-<td>Maximize the current pane (toggles between normal and maximized
-size).</td>
+<td><code>useradd -g &lt;group&gt; &lt;username&gt;</code></td>
+<td>Assigns the user to a specific group.</td>
 </tr>
 </tbody>
 </table>
-<p>Edit <code>~/.tmux.conf</code> to set custom keybinds or change
-configuration options.</p> 
+<p>To check user configuration, open the <code>/etc/passwd</code> file.
+The file uses a colon <code>:</code> as the delimiter between columns.
+Each line represents a user and contains the following information in
+tabular format:</p>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Col</th>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>Username</td>
+<td>The login name of the user.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>Password</td>
+<td>Often shown as <code>x</code>, indicating the password is stored
+securely in the shadow file.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>UID (User ID)</td>
+<td>A unique numerical identifier assigned to the user.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td>GID (Group ID)</td>
+<td>The primary group ID for the user, which links to an entry in
+<code>/etc/group</code>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td>User Info</td>
+<td>Optional field for additional user details, such as full name or
+description.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td>Home Directory</td>
+<td>The path to the user’s home directory.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td>Shell</td>
+<td>The default shell assigned to the user (e.g.,
+<code>/bin/bash</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="userdel"><code>userdel</code></h3>
+<p>Removes a user from the system. This can optionally remove the user’s
+home directory and mail spool.</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>userdel &lt;username&gt;</code></td>
+<td>Removes the user but keeps the home directory and files.</td>
+</tr>
+<tr class="even">
+<td><code>userdel -r &lt;username&gt;</code></td>
+<td>Removes the user and deletes their home directory and mail
+spool.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="groupadd"><code>groupadd</code></h3>
+<p>Adds a new group to the system. It assigns default group values
+unless further options are specified.</p>
+<table>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>groupadd &lt;groupname&gt;</code></td>
+<td>Creates a new group with the given name.</td>
+</tr>
+<tr class="even">
+<td><code>groupadd -g &lt;gid&gt; &lt;groupname&gt;</code></td>
+<td>Specifies a group ID (GID) for the new group.</td>
+</tr>
+</tbody>
+</table>
+<p>To check group configuration, open the <code>/etc/group</code> file.
+The file defines groups on the system. It uses a colon <code>:</code> as
+a delimiter to separate the columns. Each line represents a group and
+contains the following information:</p>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 14%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Col</th>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>Group Name</td>
+<td>The name of the group.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>Password</td>
+<td>Usually marked as <code>x</code>, indicating the group’s password
+(if used) is stored separately.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>GID (Group ID)</td>
+<td>A unique numerical identifier assigned to the group.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td>User List</td>
+<td>A comma-separated list of usernames who are members of the
+group.</td>
+</tr>
+</tbody>
+</table>
+<p>Now the headers are more descriptive, aligning with the idea of
+explaining each part in a clear way!</p>
+<h3 id="groupdel"><code>groupdel</code></h3>
+<p>Removes a group from the system.</p>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>groupdel &lt;groupname&gt;</code></td>
+<td>Deletes the group but does not remove users assigned to it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="usermod"><code>usermod</code></h3>
+<p>Modifies an existing user’s properties such as their group, home
+directory, and shell.</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>usermod -aG &lt;group&gt; &lt;username&gt;</code></td>
+<td>Adds the user to a supplementary group without removing them from
+other groups.</td>
+</tr>
+<tr class="even">
+<td><code>usermod -d &lt;new_home&gt; &lt;username&gt;</code></td>
+<td>Changes the user’s home directory.</td>
+</tr>
+<tr class="odd">
+<td><code>usermod -s &lt;new_shell&gt; &lt;username&gt;</code></td>
+<td>Changes the user’s login shell.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="passwd"><code>passwd</code></h3>
+<p>Changes a user’s password or locks/unlocks the account.</p>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>passwd &lt;username&gt;</code></td>
+<td>Changes the password for the specified user.</td>
+</tr>
+<tr class="even">
+<td><code>passwd -l &lt;username&gt;</code></td>
+<td>Locks the user’s account.</td>
+</tr>
+<tr class="odd">
+<td><code>passwd -u &lt;username&gt;</code></td>
+<td>Unlocks a locked user account.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="su"><code>su</code></h3>
+<p>Switches the user to another account, usually the root user. It is
+often used to gain administrative privileges.</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>su &lt;username&gt;</code></td>
+<td>Switches to the specified user’s account.</td>
+</tr>
+<tr class="even">
+<td><code>su -</code></td>
+<td>Switches to the root user and loads their environment.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="groups"><code>groups</code></h3>
+<p>Displays the groups that the current user or a specified user belongs
+to.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>groups</code></td>
+<td>Shows the groups for the current user.</td>
+</tr>
+<tr class="even">
+<td><code>groups &lt;username&gt;</code></td>
+<td>Shows the groups for the specified user.</td>
+</tr>
+</tbody>
+</table> 
     </body>
 </html>

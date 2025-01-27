@@ -5,8 +5,8 @@
         <meta name="generator" content="pandoc" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
                 <meta name="author" content="ChatGPT" />
-                 <meta name="dcterms.date" content="2025-01-22" />
-                  <title>tmux</title>
+                 <meta name="dcterms.date" content="2025-01-27" />
+                  <title>ps</title>
         <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -291,126 +291,96 @@ color: #4183c4;
     <body>
                  <header id="title-block-header">
             <div class="left">
-                <h1 class="title">tmux</h1>
+                <h1 class="title">ps</h1>
                             </div>
             <div class="right">
                                 <p class="author">ChatGPT</p>
-                                 <p class="date">2025-01-22</p>
+                                 <p class="date">2025-01-27</p>
                             </div>
         </header>
-          <p><code>tmux</code> is a tool that lets you run and manage
-multiple terminal sessions in a single window, with features like
-session persistence and split panes.</p>
+          <p>Displays information about running processes on a system.
+It provides details like the process ID (PID), the terminal associated
+with the process, the CPU and memory usage, and the command that started
+the process. It is useful for monitoring processes and diagnosing system
+performance.</p>
 <table>
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 30%" />
-<col style="width: 46%" />
+<col style="width: 12%" />
+<col style="width: 87%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Action</strong></th>
-<th><strong>Key Binding</strong></th>
-<th><strong>Description</strong></th>
+<th>Command</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Prefix (default)</strong></td>
-<td><code>Ctrl + b</code></td>
-<td>Activate tmux command mode.</td>
+<td>ps</td>
+<td>Displays a snapshot of processes running in the current terminal
+session.</td>
 </tr>
 <tr class="even">
-<td><strong>Split window horizontally</strong></td>
-<td><code>Ctrl + b</code>, then <code>%</code></td>
-<td>Split the window into two panes horizontally.</td>
+<td>ps aux</td>
+<td>Shows all processes running on the system. The components are:</td>
 </tr>
 <tr class="odd">
-<td><strong>Split window vertically</strong></td>
-<td><code>Ctrl + b</code>, then <code>&quot;</code></td>
-<td>Split the window into two panes vertically.</td>
+<td></td>
+<td>- <code>a</code>: Eliminates the BSD restriction “only yourself” to
+include processes from other users.</td>
 </tr>
 <tr class="even">
-<td><strong>Navigate between panes</strong></td>
-<td><code>Ctrl + b</code>, then arrow key</td>
-<td>Move between panes using arrow keys (up, down, left, right).</td>
+<td></td>
+<td>- <code>u</code>: Uses a user-oriented format, displaying the
+process owner, CPU, and memory usage.</td>
 </tr>
 <tr class="odd">
-<td><strong>Resize pane</strong></td>
-<td><code>Ctrl + b</code>, then hold <code>Alt</code> + arrow key</td>
-<td>Resize the current pane.</td>
+<td></td>
+<td>- <code>x</code>: Removes the BSD restriction “must have a tty” to
+include processes that don’t have a controlling terminal.</td>
 </tr>
 <tr class="even">
-<td><strong>Close the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>x</code></td>
-<td>Close the current pane (you will be prompted to confirm).</td>
+<td>ps -f</td>
+<td>Lists processes in full format, showing more detailed info like the
+parent process ID (PPID).</td>
 </tr>
 <tr class="odd">
-<td><strong>Create a new window</strong></td>
-<td><code>Ctrl + b</code>, then <code>c</code></td>
-<td>Create a new tmux window.</td>
+<td>ps -u <username></td>
+<td>Shows processes running under a specific user, based on the provided
+username.</td>
 </tr>
 <tr class="even">
-<td><strong>Switch between windows</strong></td>
-<td><code>Ctrl + b</code>, then <code>n</code> (next) or <code>p</code>
-(previous)</td>
-<td>Switch to the next or previous window.</td>
+<td>ps -p <PID></td>
+<td>Displays details for a single process identified by its Process ID
+(PID).</td>
 </tr>
 <tr class="odd">
-<td><strong>Select a window by number</strong></td>
-<td><code>Ctrl + b</code>, then a number (0-9)</td>
-<td>Jump directly to the window by its number.</td>
+<td>ps -l</td>
+<td>Lists processes in a long format, showing extra details like process
+priority, flags, and time.</td>
 </tr>
 <tr class="even">
-<td><strong>Rename window</strong></td>
-<td><code>Ctrl + b</code>, then <code>,</code></td>
-<td>Rename the current window.</td>
+<td>ps -c <time></td>
+<td>Shows processes that were started at a specific time. For example,
+<code>ps -c 12:00</code> lists processes started at 12:00.</td>
 </tr>
 <tr class="odd">
-<td><strong>Detach from tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>d</code></td>
-<td>Detach from the current tmux session and return to the shell.</td>
+<td>ps –sort=<field></td>
+<td>Sorts the output by a specified field (e.g.,
+<code>ps --sort=pid</code> sorts by process ID).</td>
 </tr>
 <tr class="even">
-<td><strong>List sessions</strong></td>
-<td><code>Ctrl + b</code>, then <code>s</code></td>
-<td>List all tmux sessions.</td>
+<td>ps -o <format></td>
+<td>Allows the user to customize the output format by specifying a
+format string (e.g., <code>ps -o pid,comm</code> shows only PID and
+command).</td>
 </tr>
 <tr class="odd">
-<td><strong>Attach to an existing session</strong></td>
-<td><code>tmux attach-session -t &lt;session_name&gt;</code></td>
-<td>Attach to a tmux session by name.</td>
-</tr>
-<tr class="even">
-<td><strong>Kill a session</strong></td>
-<td><code>Ctrl + b</code>, then <code>:</code> and type
-<code>kill-session</code></td>
-<td>Kill the current tmux session.</td>
-</tr>
-<tr class="odd">
-<td><strong>Lock tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>l</code></td>
-<td>Lock the tmux session (requires password).</td>
-</tr>
-<tr class="even">
-<td><strong>Scroll mode (copy mode)</strong></td>
-<td><code>Ctrl + b</code>, then <code>[</code></td>
-<td>Enter scroll mode to navigate through the pane history.</td>
-</tr>
-<tr class="odd">
-<td><strong>Exit tmux</strong></td>
-<td>Type <code>exit</code> inside a window or pane</td>
-<td>Exit the tmux session or pane.</td>
-</tr>
-<tr class="even">
-<td><strong>Maximize the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>z</code></td>
-<td>Maximize the current pane (toggles between normal and maximized
-size).</td>
+<td>ps -T</td>
+<td>Shows information about threads instead of processes, useful for
+multi-threaded programs.</td>
 </tr>
 </tbody>
-</table>
-<p>Edit <code>~/.tmux.conf</code> to set custom keybinds or change
-configuration options.</p> 
+</table> 
     </body>
 </html>

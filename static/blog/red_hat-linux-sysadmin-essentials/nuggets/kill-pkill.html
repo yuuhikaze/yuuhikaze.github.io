@@ -5,8 +5,8 @@
         <meta name="generator" content="pandoc" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
                 <meta name="author" content="ChatGPT" />
-                 <meta name="dcterms.date" content="2025-01-22" />
-                  <title>tmux</title>
+                 <meta name="dcterms.date" content="2025-01-27" />
+                  <title>kill-pkill</title>
         <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -291,126 +291,101 @@ color: #4183c4;
     <body>
                  <header id="title-block-header">
             <div class="left">
-                <h1 class="title">tmux</h1>
+                <h1 class="title">kill, pkill</h1>
                             </div>
             <div class="right">
                                 <p class="author">ChatGPT</p>
-                                 <p class="date">2025-01-22</p>
+                                 <p class="date">2025-01-27</p>
                             </div>
         </header>
-          <p><code>tmux</code> is a tool that lets you run and manage
-multiple terminal sessions in a single window, with features like
-session persistence and split panes.</p>
+                 <nav id="TOC" role="doc-toc">
+             <ul>
+<li><a href="#kill" id="toc-kill"><code>kill</code></a></li>
+<li><a href="#pkill" id="toc-pkill"><code>pkill</code></a></li>
+</ul>
+        </nav>
+         <h3 id="kill"><code>kill</code></h3>
+<p>Sends a signal to a process, instructing it to terminate. By default,
+it sends the TERM signal (signal 15), which asks the process to
+gracefully shut down. The user can also specify different signals if
+needed.</p>
 <table>
 <colgroup>
 <col style="width: 22%" />
-<col style="width: 30%" />
-<col style="width: 46%" />
+<col style="width: 77%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Action</strong></th>
-<th><strong>Key Binding</strong></th>
-<th><strong>Description</strong></th>
+<th>Command</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Prefix (default)</strong></td>
-<td><code>Ctrl + b</code></td>
-<td>Activate tmux command mode.</td>
+<td><code>kill &lt;PID&gt;</code></td>
+<td>Terminates the process with the given Process ID (PID).</td>
 </tr>
 <tr class="even">
-<td><strong>Split window horizontally</strong></td>
-<td><code>Ctrl + b</code>, then <code>%</code></td>
-<td>Split the window into two panes horizontally.</td>
+<td><code>kill -9 &lt;PID&gt;</code></td>
+<td>Forcefully terminates the process, even if it doesn’t respond to the
+TERM signal.</td>
 </tr>
 <tr class="odd">
-<td><strong>Split window vertically</strong></td>
-<td><code>Ctrl + b</code>, then <code>&quot;</code></td>
-<td>Split the window into two panes vertically.</td>
+<td><code>kill -15 &lt;PID&gt;</code></td>
+<td>Sends the TERM signal explicitly (same as default).</td>
 </tr>
 <tr class="even">
-<td><strong>Navigate between panes</strong></td>
-<td><code>Ctrl + b</code>, then arrow key</td>
-<td>Move between panes using arrow keys (up, down, left, right).</td>
+<td><code>kill -l</code></td>
+<td>Lists all available signal names.</td>
 </tr>
 <tr class="odd">
-<td><strong>Resize pane</strong></td>
-<td><code>Ctrl + b</code>, then hold <code>Alt</code> + arrow key</td>
-<td>Resize the current pane.</td>
-</tr>
-<tr class="even">
-<td><strong>Close the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>x</code></td>
-<td>Close the current pane (you will be prompted to confirm).</td>
-</tr>
-<tr class="odd">
-<td><strong>Create a new window</strong></td>
-<td><code>Ctrl + b</code>, then <code>c</code></td>
-<td>Create a new tmux window.</td>
-</tr>
-<tr class="even">
-<td><strong>Switch between windows</strong></td>
-<td><code>Ctrl + b</code>, then <code>n</code> (next) or <code>p</code>
-(previous)</td>
-<td>Switch to the next or previous window.</td>
-</tr>
-<tr class="odd">
-<td><strong>Select a window by number</strong></td>
-<td><code>Ctrl + b</code>, then a number (0-9)</td>
-<td>Jump directly to the window by its number.</td>
-</tr>
-<tr class="even">
-<td><strong>Rename window</strong></td>
-<td><code>Ctrl + b</code>, then <code>,</code></td>
-<td>Rename the current window.</td>
-</tr>
-<tr class="odd">
-<td><strong>Detach from tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>d</code></td>
-<td>Detach from the current tmux session and return to the shell.</td>
-</tr>
-<tr class="even">
-<td><strong>List sessions</strong></td>
-<td><code>Ctrl + b</code>, then <code>s</code></td>
-<td>List all tmux sessions.</td>
-</tr>
-<tr class="odd">
-<td><strong>Attach to an existing session</strong></td>
-<td><code>tmux attach-session -t &lt;session_name&gt;</code></td>
-<td>Attach to a tmux session by name.</td>
-</tr>
-<tr class="even">
-<td><strong>Kill a session</strong></td>
-<td><code>Ctrl + b</code>, then <code>:</code> and type
-<code>kill-session</code></td>
-<td>Kill the current tmux session.</td>
-</tr>
-<tr class="odd">
-<td><strong>Lock tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>l</code></td>
-<td>Lock the tmux session (requires password).</td>
-</tr>
-<tr class="even">
-<td><strong>Scroll mode (copy mode)</strong></td>
-<td><code>Ctrl + b</code>, then <code>[</code></td>
-<td>Enter scroll mode to navigate through the pane history.</td>
-</tr>
-<tr class="odd">
-<td><strong>Exit tmux</strong></td>
-<td>Type <code>exit</code> inside a window or pane</td>
-<td>Exit the tmux session or pane.</td>
-</tr>
-<tr class="even">
-<td><strong>Maximize the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>z</code></td>
-<td>Maximize the current pane (toggles between normal and maximized
-size).</td>
+<td><code>kill -&lt;signal&gt; &lt;PID&gt;</code></td>
+<td>Terminates the process with a specified signal (e.g.,
+<code>kill -HUP &lt;PID&gt;</code>).</td>
 </tr>
 </tbody>
 </table>
-<p>Edit <code>~/.tmux.conf</code> to set custom keybinds or change
-configuration options.</p> 
+<h3 id="pkill"><code>pkill</code></h3>
+<p>Sends a signal to processes based on their name or other
+attributes.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pkill &lt;name&gt;</code></td>
+<td>Kills processes by name (e.g., <code>pkill firefox</code>).</td>
+</tr>
+<tr class="even">
+<td><code>pkill -9 &lt;name&gt;</code></td>
+<td>Forcefully terminates processes by name.</td>
+</tr>
+<tr class="odd">
+<td><code>pkill -f &lt;pattern&gt;</code></td>
+<td>Kills processes whose command line contains a given pattern.</td>
+</tr>
+<tr class="even">
+<td><code>pkill -u &lt;user&gt;</code></td>
+<td>Terminates all processes belonging to a specific user.</td>
+</tr>
+<tr class="odd">
+<td><code>pkill -l</code></td>
+<td>Lists available signals.</td>
+</tr>
+<tr class="even">
+<td><code>pkill -&lt;signal&gt; &lt;name&gt;</code></td>
+<td>Terminates processes with a specified signal (e.g.,
+<code>pkill -HUP firefox</code>).</td>
+</tr>
+</tbody>
+</table> 
     </body>
 </html>

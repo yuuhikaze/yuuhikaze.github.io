@@ -5,8 +5,8 @@
         <meta name="generator" content="pandoc" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
                 <meta name="author" content="ChatGPT" />
-                 <meta name="dcterms.date" content="2025-01-22" />
-                  <title>tmux</title>
+                 <meta name="dcterms.date" content="2025-01-27" />
+                  <title>ln</title>
         <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -291,126 +291,48 @@ color: #4183c4;
     <body>
                  <header id="title-block-header">
             <div class="left">
-                <h1 class="title">tmux</h1>
+                <h1 class="title">ln</h1>
                             </div>
             <div class="right">
                                 <p class="author">ChatGPT</p>
-                                 <p class="date">2025-01-22</p>
+                                 <p class="date">2025-01-27</p>
                             </div>
         </header>
-          <p><code>tmux</code> is a tool that lets you run and manage
-multiple terminal sessions in a single window, with features like
-session persistence and split panes.</p>
+          <p>Creates links between files, allowing the user to create
+references to files either as hard links or symbolic (soft) links. Hard
+links point directly to the file data, while symbolic links are pointers
+to the file name.</p>
 <table>
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 30%" />
-<col style="width: 46%" />
+<col style="width: 26%" />
+<col style="width: 73%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Action</strong></th>
-<th><strong>Key Binding</strong></th>
-<th><strong>Description</strong></th>
+<th>Command</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Prefix (default)</strong></td>
-<td><code>Ctrl + b</code></td>
-<td>Activate tmux command mode.</td>
+<td><code>ln &lt;source&gt; &lt;link&gt;</code></td>
+<td>Creates a hard link named <code>&lt;link&gt;</code> pointing to
+<code>&lt;source&gt;</code>.</td>
 </tr>
 <tr class="even">
-<td><strong>Split window horizontally</strong></td>
-<td><code>Ctrl + b</code>, then <code>%</code></td>
-<td>Split the window into two panes horizontally.</td>
+<td><code>ln -s &lt;source&gt; &lt;link&gt;</code></td>
+<td>Creates a symbolic link named <code>&lt;link&gt;</code> pointing to
+<code>&lt;source&gt;</code>.</td>
 </tr>
 <tr class="odd">
-<td><strong>Split window vertically</strong></td>
-<td><code>Ctrl + b</code>, then <code>&quot;</code></td>
-<td>Split the window into two panes vertically.</td>
-</tr>
-<tr class="even">
-<td><strong>Navigate between panes</strong></td>
-<td><code>Ctrl + b</code>, then arrow key</td>
-<td>Move between panes using arrow keys (up, down, left, right).</td>
-</tr>
-<tr class="odd">
-<td><strong>Resize pane</strong></td>
-<td><code>Ctrl + b</code>, then hold <code>Alt</code> + arrow key</td>
-<td>Resize the current pane.</td>
-</tr>
-<tr class="even">
-<td><strong>Close the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>x</code></td>
-<td>Close the current pane (you will be prompted to confirm).</td>
-</tr>
-<tr class="odd">
-<td><strong>Create a new window</strong></td>
-<td><code>Ctrl + b</code>, then <code>c</code></td>
-<td>Create a new tmux window.</td>
-</tr>
-<tr class="even">
-<td><strong>Switch between windows</strong></td>
-<td><code>Ctrl + b</code>, then <code>n</code> (next) or <code>p</code>
-(previous)</td>
-<td>Switch to the next or previous window.</td>
-</tr>
-<tr class="odd">
-<td><strong>Select a window by number</strong></td>
-<td><code>Ctrl + b</code>, then a number (0-9)</td>
-<td>Jump directly to the window by its number.</td>
-</tr>
-<tr class="even">
-<td><strong>Rename window</strong></td>
-<td><code>Ctrl + b</code>, then <code>,</code></td>
-<td>Rename the current window.</td>
-</tr>
-<tr class="odd">
-<td><strong>Detach from tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>d</code></td>
-<td>Detach from the current tmux session and return to the shell.</td>
-</tr>
-<tr class="even">
-<td><strong>List sessions</strong></td>
-<td><code>Ctrl + b</code>, then <code>s</code></td>
-<td>List all tmux sessions.</td>
-</tr>
-<tr class="odd">
-<td><strong>Attach to an existing session</strong></td>
-<td><code>tmux attach-session -t &lt;session_name&gt;</code></td>
-<td>Attach to a tmux session by name.</td>
-</tr>
-<tr class="even">
-<td><strong>Kill a session</strong></td>
-<td><code>Ctrl + b</code>, then <code>:</code> and type
-<code>kill-session</code></td>
-<td>Kill the current tmux session.</td>
-</tr>
-<tr class="odd">
-<td><strong>Lock tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>l</code></td>
-<td>Lock the tmux session (requires password).</td>
-</tr>
-<tr class="even">
-<td><strong>Scroll mode (copy mode)</strong></td>
-<td><code>Ctrl + b</code>, then <code>[</code></td>
-<td>Enter scroll mode to navigate through the pane history.</td>
-</tr>
-<tr class="odd">
-<td><strong>Exit tmux</strong></td>
-<td>Type <code>exit</code> inside a window or pane</td>
-<td>Exit the tmux session or pane.</td>
-</tr>
-<tr class="even">
-<td><strong>Maximize the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>z</code></td>
-<td>Maximize the current pane (toggles between normal and maximized
-size).</td>
+<td><code>ln -f &lt;source&gt; &lt;link&gt;</code></td>
+<td>Forces the creation of the link, overwriting any existing
+<code>&lt;link&gt;</code>.</td>
 </tr>
 </tbody>
 </table>
-<p>Edit <code>~/.tmux.conf</code> to set custom keybinds or change
-configuration options.</p> 
+<p>The <code>ln</code> command is commonly used to create references for
+files, which can be helpful for backup, organization, or simplifying
+access to files from multiple locations.</p> 
     </body>
 </html>

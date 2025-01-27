@@ -5,8 +5,8 @@
         <meta name="generator" content="pandoc" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
                 <meta name="author" content="ChatGPT" />
-                 <meta name="dcterms.date" content="2025-01-22" />
-                  <title>tmux</title>
+                 <meta name="dcterms.date" content="2025-01-24" />
+                  <title>who-w-write</title>
         <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,70 @@ width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
                 <style type="text/css">
 
@@ -291,126 +355,135 @@ color: #4183c4;
     <body>
                  <header id="title-block-header">
             <div class="left">
-                <h1 class="title">tmux</h1>
+                <h1 class="title">who, w, write</h1>
                             </div>
             <div class="right">
                                 <p class="author">ChatGPT</p>
-                                 <p class="date">2025-01-22</p>
+                                 <p class="date">2025-01-24</p>
                             </div>
         </header>
-          <p><code>tmux</code> is a tool that lets you run and manage
-multiple terminal sessions in a single window, with features like
-session persistence and split panes.</p>
+                 <nav id="TOC" role="doc-toc">
+             <ul>
+<li><a href="#who" id="toc-who"><code>who</code></a></li>
+<li><a href="#w" id="toc-w"><code>w</code></a></li>
+<li><a href="#write" id="toc-write"><code>write</code></a></li>
+<li><a href="#related" id="toc-related">Related</a></li>
+</ul>
+        </nav>
+         <h3 id="who"><code>who</code></h3>
+<p>Shows who is logged into the system. It provides information about
+the current users, including their login name, terminal, login time, and
+from where they are logged in.</p>
 <table>
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 30%" />
-<col style="width: 46%" />
+<col style="width: 14%" />
+<col style="width: 85%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Action</strong></th>
-<th><strong>Key Binding</strong></th>
-<th><strong>Description</strong></th>
+<th>Command</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Prefix (default)</strong></td>
-<td><code>Ctrl + b</code></td>
-<td>Activate tmux command mode.</td>
+<td><code>who</code></td>
+<td>Displays a list of users currently logged into the system.</td>
 </tr>
 <tr class="even">
-<td><strong>Split window horizontally</strong></td>
-<td><code>Ctrl + b</code>, then <code>%</code></td>
-<td>Split the window into two panes horizontally.</td>
+<td><code>who -u</code></td>
+<td>Displays the process ID (PID) of the user’s login session.</td>
 </tr>
 <tr class="odd">
-<td><strong>Split window vertically</strong></td>
-<td><code>Ctrl + b</code>, then <code>&quot;</code></td>
-<td>Split the window into two panes vertically.</td>
+<td><code>who -b</code></td>
+<td>Shows the system’s last boot time.</td>
 </tr>
 <tr class="even">
-<td><strong>Navigate between panes</strong></td>
-<td><code>Ctrl + b</code>, then arrow key</td>
-<td>Move between panes using arrow keys (up, down, left, right).</td>
-</tr>
-<tr class="odd">
-<td><strong>Resize pane</strong></td>
-<td><code>Ctrl + b</code>, then hold <code>Alt</code> + arrow key</td>
-<td>Resize the current pane.</td>
-</tr>
-<tr class="even">
-<td><strong>Close the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>x</code></td>
-<td>Close the current pane (you will be prompted to confirm).</td>
-</tr>
-<tr class="odd">
-<td><strong>Create a new window</strong></td>
-<td><code>Ctrl + b</code>, then <code>c</code></td>
-<td>Create a new tmux window.</td>
-</tr>
-<tr class="even">
-<td><strong>Switch between windows</strong></td>
-<td><code>Ctrl + b</code>, then <code>n</code> (next) or <code>p</code>
-(previous)</td>
-<td>Switch to the next or previous window.</td>
-</tr>
-<tr class="odd">
-<td><strong>Select a window by number</strong></td>
-<td><code>Ctrl + b</code>, then a number (0-9)</td>
-<td>Jump directly to the window by its number.</td>
-</tr>
-<tr class="even">
-<td><strong>Rename window</strong></td>
-<td><code>Ctrl + b</code>, then <code>,</code></td>
-<td>Rename the current window.</td>
-</tr>
-<tr class="odd">
-<td><strong>Detach from tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>d</code></td>
-<td>Detach from the current tmux session and return to the shell.</td>
-</tr>
-<tr class="even">
-<td><strong>List sessions</strong></td>
-<td><code>Ctrl + b</code>, then <code>s</code></td>
-<td>List all tmux sessions.</td>
-</tr>
-<tr class="odd">
-<td><strong>Attach to an existing session</strong></td>
-<td><code>tmux attach-session -t &lt;session_name&gt;</code></td>
-<td>Attach to a tmux session by name.</td>
-</tr>
-<tr class="even">
-<td><strong>Kill a session</strong></td>
-<td><code>Ctrl + b</code>, then <code>:</code> and type
-<code>kill-session</code></td>
-<td>Kill the current tmux session.</td>
-</tr>
-<tr class="odd">
-<td><strong>Lock tmux session</strong></td>
-<td><code>Ctrl + b</code>, then <code>l</code></td>
-<td>Lock the tmux session (requires password).</td>
-</tr>
-<tr class="even">
-<td><strong>Scroll mode (copy mode)</strong></td>
-<td><code>Ctrl + b</code>, then <code>[</code></td>
-<td>Enter scroll mode to navigate through the pane history.</td>
-</tr>
-<tr class="odd">
-<td><strong>Exit tmux</strong></td>
-<td>Type <code>exit</code> inside a window or pane</td>
-<td>Exit the tmux session or pane.</td>
-</tr>
-<tr class="even">
-<td><strong>Maximize the current pane</strong></td>
-<td><code>Ctrl + b</code>, then <code>z</code></td>
-<td>Maximize the current pane (toggles between normal and maximized
-size).</td>
+<td><code>who -r</code></td>
+<td>Displays the current runlevel of the system.</td>
 </tr>
 </tbody>
 </table>
-<p>Edit <code>~/.tmux.conf</code> to set custom keybinds or change
-configuration options.</p> 
+<h3 id="w"><code>w</code></h3>
+<p>Displays detailed information about the users currently logged in and
+their activity. It shows the login name, the terminal they are using,
+their login time, idle time, and what they are doing.</p>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>w</code></td>
+<td>Displays a list of logged-in users and their activity.</td>
+</tr>
+<tr class="even">
+<td><code>w -h</code></td>
+<td>Suppresses the header row of the output.</td>
+</tr>
+<tr class="odd">
+<td><code>w -u</code></td>
+<td>Displays only users who have been idle for more than a specific
+time.</td>
+</tr>
+<tr class="even">
+<td><code>w -f</code></td>
+<td>Shows only the users that are currently executing commands in the
+terminal.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="write"><code>write</code></h3>
+<p>Sends a message to another user’s terminal. It allows the user to
+communicate with others who are logged in, directly through their
+terminal.</p>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>write &lt;username&gt;</code></td>
+<td>Starts a message session with the specified user.</td>
+</tr>
+<tr class="even">
+<td><code>write &lt;username&gt; &lt;tty&gt;</code></td>
+<td>Sends a message to a specific user on a particular terminal.</td>
+</tr>
+<tr class="odd">
+<td><code>Ctrl+D</code></td>
+<td>Ends the message session.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="related">Related</h3>
+<ul>
+<li><p>Kick off a user from <code>ssh</code> and laugh at their
+impending disconnection: <a href="https://unix.stackexchange.com/a/622" class="uri">https://unix.stackexchange.com/a/622</a></p>
+<ol type="1">
+<li><p>See who’s logged into your machine.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> who <span class="at">-u</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mmrozek</span>     pts/0        2025-01-27 08:50   .          2081 <span class="er">(</span><span class="ex">192.168.122.1</span><span class="kw">)</span></span></code></pre></div></li>
+<li><p>Laugh at their impending disconnection (this step is optional,
+but encouraged).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">&quot;HAHAHAHAHAHAHAHA&quot;</span> <span class="kw">|</span> <span class="fu">write</span> mmrozek pts/0</span></code></pre></div></li>
+<li><p>Kill the corresponding process:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> kill <span class="at">-1</span> 2081 <span class="co"># Send HUP signal to terminate connection gracefully. In case user is still connected, force the disconnection with `kill -9 2081`</span></span></code></pre></div></li>
+</ol></li>
+</ul> 
     </body>
 </html>
