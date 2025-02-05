@@ -1,8 +1,7 @@
 ---
 title: Endpoint Central
 date: 2025-01-23
-author:
- - Steven Merino
+author: Steven Merino
 ---
 
 ### Uninstall UEMSAgent without token

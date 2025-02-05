@@ -1,0 +1,43 @@
+%%{init: {'theme': 'neutral'}}%%
+classDiagram
+    TechnicalExpertise <|-- SoftwareDev
+    TechnicalExpertise <|-- SystemAdmin
+    TechnicalExpertise <|-- Security
+    TechnicalExpertise <|-- CreativeSuite
+
+    class SoftwareDev{
+        +SystemsProgramming: [Rust, C++]
+        +GeneralPurpose: [Python, Java, Lua]
+        +WebStack: [JavaScript, HTML, CSS]
+        +WebFrameworks: [Svelte]
+        +Tools: [Git, Docker]
+        +Databases: [SQLite, PostgreSQL, MariaDB]
+    }
+
+    class SystemAdmin{
+        +Linux: [Arch/Artix, Debian]
+        +Shell: [Bash]
+        +CoreUtils
+        %% +AndroidTools
+    }
+
+    class Security{
+        +Cryptography
+        +NetworkSecurity
+        +PenTesting: [nmap, hashcat]
+        +Protocols: [SSH, Tor]
+        +Tools: [curl, wget]
+    }
+
+    class CreativeSuite{
+        +3D: [Blender]
+        +2D: [Krita, Inkscape]
+        +Video: [Kdenlive]
+        +Audio: [Audacity]
+    }
+
+    Security <|-- Cryptography
+    class Cryptography{
+        +Symmetric: [OpenSSL/AES256]
+        +Asymmetric: [GPG/RSA, ED25519]
+    }
