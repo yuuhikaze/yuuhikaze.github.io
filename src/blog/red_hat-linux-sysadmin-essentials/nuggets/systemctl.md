@@ -1,8 +1,7 @@
 ---
 title: systemctl
 date: 2025-01-22
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 | **Command**                           | **Description**                                                                  | **Example**                          |

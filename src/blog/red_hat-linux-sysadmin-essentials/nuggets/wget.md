@@ -1,8 +1,7 @@
 ---
 title: wget
 date: 2025-01-22
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 Downloads files from the web. It supports HTTP, HTTPS, and FTP protocols. It can download single files, entire websites, and directories, and offers features like resuming interrupted downloads, limiting download speeds, and saving files with custom names.

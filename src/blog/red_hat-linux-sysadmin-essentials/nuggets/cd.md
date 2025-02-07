@@ -1,8 +1,7 @@
 ---
 title: cd
 date: 2025-01-27
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 Changes the current directory to the specified path. It allows the user to navigate between directories in the file system.

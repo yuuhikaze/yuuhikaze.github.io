@@ -1,8 +1,7 @@
 ---
 title: who, w, write
 date: 2025-01-24
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 ### `who`

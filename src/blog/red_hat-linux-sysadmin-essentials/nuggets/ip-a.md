@@ -1,8 +1,7 @@
 ---
 title: ip addr show
 date: 2025-01-27
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 The output of the `ip addr show` command displays detailed information about the network interfaces on a Linux system. Here's a breakdown of the key components in the output:

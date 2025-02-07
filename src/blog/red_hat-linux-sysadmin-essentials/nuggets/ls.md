@@ -1,8 +1,7 @@
 ---
 title: ls
 date: 2025-01-24
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 List files and directories in a specified directory, provides different levels of information depending on the options used.

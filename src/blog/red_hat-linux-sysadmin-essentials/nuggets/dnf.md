@@ -1,8 +1,7 @@
 ---
 title: dnf
 date: 2025-01-22
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 | **Action**                               | **Command (dnf)**                           | **Description**                                                                 |

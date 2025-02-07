@@ -1,8 +1,7 @@
 ---
 title: ss (Socket Stat)
 date: 2025-01-22
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 Program for inspecting network connections and socket statistics.
@@ -18,7 +17,6 @@ Program for inspecting network connections and socket statistics.
 | `ss -p`                             | Show the process using the socket.                                                      | `ss -p`                               |
 | `ss -s`                             | Display socket statistics summary.                                                      | `ss -s`                               |
 | `ss -r`                             | Display resolved hostnames and services for the connections.                            | `ss -r`                               |
-| `ss -tuln`                          | Display listening TCP and UDP sockets with numeric addresses and ports.                 | `ss -tuln`                            |
 | `ss -o state established`           | Show sockets in the "ESTABLISHED" state.                                                 | `ss -o state established`            |
 | `ss -4`                             | Show only IPv4 sockets.                                                                 | `ss -4`                               |
 | `ss -6`                             | Show only IPv6 sockets.                                                                 | `ss -6`                               |

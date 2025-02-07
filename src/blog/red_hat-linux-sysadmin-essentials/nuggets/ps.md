@@ -1,8 +1,7 @@
 ---
 title: ps
 date: 2025-01-27
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 Displays information about running processes on a system. It provides details like the process ID (PID), the terminal associated with the process, the CPU and memory usage, and the command that started the process. It is useful for monitoring processes and diagnosing system performance.

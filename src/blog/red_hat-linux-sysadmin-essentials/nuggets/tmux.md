@@ -1,8 +1,7 @@
 ---
 title: tmux
 date: 2025-01-22
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 `tmux` is a tool that lets you run and manage multiple terminal sessions in a single window, with features like session persistence and split panes.

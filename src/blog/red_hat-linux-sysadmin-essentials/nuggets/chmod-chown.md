@@ -1,8 +1,7 @@
 ---
 title: chmod, chown
 date: 2025-01-24
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 In Unix-like systems, files and directories have permissions that define who can read, write, or execute them. These permissions are represented using a **3-digit octal** system, where each digit corresponds to different user categories: **owner**, **group**, and **others**.

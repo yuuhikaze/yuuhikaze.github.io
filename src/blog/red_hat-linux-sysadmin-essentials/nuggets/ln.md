@@ -1,8 +1,7 @@
 ---
 title: ln
 date: 2025-01-27
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 Creates links between files, allowing the user to create references to files either as hard links or symbolic (soft) links. Hard links point directly to the file data, while symbolic links are pointers to the file name.

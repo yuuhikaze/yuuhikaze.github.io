@@ -1,8 +1,7 @@
 ---
 title: Users and groups
 date: 2025-01-27
-author:
-  - ChatGPT
+author: ChatGPT
 from: markdown+pipe_tables
 ---
 
@@ -12,7 +11,7 @@ Adds a new user to the system. The user will be assigned default values unless f
 
 | Command                         | Description                                         |
 |---------------------------------|-----------------------------------------------------|
-| `useradd -m <username>`         | Creates a user and their home directory.            |
+| `useradd <username>`         | Creates a user and their home directory.            |
 | `useradd -s <shell> <username>` | Specifies a shell for the user (e.g., `/bin/bash`). |
 | `useradd -g <group> <username>` | Assigns the user to a specific group.               |
 

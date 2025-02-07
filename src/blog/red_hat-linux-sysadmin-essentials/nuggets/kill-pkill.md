@@ -1,8 +1,7 @@
 ---
 title: kill, pkill
 date: 2025-01-27
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 ### `kill`

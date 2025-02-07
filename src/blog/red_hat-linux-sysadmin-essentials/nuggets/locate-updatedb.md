@@ -1,8 +1,7 @@
 ---
 title: locate, updatedb
 date: 2025-02-03
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 ### `locate`

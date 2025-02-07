@@ -1,8 +1,7 @@
 ---
 title: auditctl
 date: 2025-01-24
-author:
-  - ChatGPT
+author: ChatGPT
 ---
 
 ### `auditctl`

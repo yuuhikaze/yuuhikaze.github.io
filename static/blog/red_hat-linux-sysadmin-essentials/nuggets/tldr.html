@@ -4,9 +4,9 @@
         <meta charset="utf-8" />
         <meta name="generator" content="pandoc" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-                <meta name="author" content="ChatGPT" />
-                 <meta name="dcterms.date" content="2025-01-27" />
-                  <title>users-groups</title>
+                <meta name="author" content="Steven Merino" />
+                 <meta name="dcterms.date" content="2025-02-07" />
+                  <title>tldr</title>
         <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,70 @@ width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
                 <style type="text/css">
 
@@ -291,331 +355,63 @@ color: #4183c4;
     <body>
                  <header id="title-block-header">
             <div class="left">
-                <h1 class="title">Users and groups</h1>
+                <h1 class="title">TLDR</h1>
                             </div>
             <div class="right">
-                                <p class="author">ChatGPT</p>
-                                 <p class="date">2025-01-27</p>
+                                <p class="author">Steven Merino</p>
+                                 <p class="date">2025-02-07</p>
                             </div>
         </header>
                  <nav id="TOC" role="doc-toc">
              <ul>
-<li><a href="#useradd" id="toc-useradd"><code>useradd</code></a></li>
-<li><a href="#userdel" id="toc-userdel"><code>userdel</code></a></li>
-<li><a href="#groupadd" id="toc-groupadd"><code>groupadd</code></a></li>
-<li><a href="#groupdel" id="toc-groupdel"><code>groupdel</code></a></li>
-<li><a href="#usermod" id="toc-usermod"><code>usermod</code></a></li>
-<li><a href="#passwd" id="toc-passwd"><code>passwd</code></a></li>
-<li><a href="#su" id="toc-su"><code>su</code></a></li>
-<li><a href="#groups" id="toc-groups"><code>groups</code></a></li>
+<li><a href="#software-management" id="toc-software-management">Software
+Management</a></li>
+<li><a href="#access-control" id="toc-access-control">Access
+Control</a></li>
+<li><a href="#services" id="toc-services">Services</a></li>
+<li><a href="#process-control" id="toc-process-control">Process
+Control</a></li>
+<li><a href="#network" id="toc-network">Network</a></li>
+<li><a href="#file-system" id="toc-file-system">File System</a></li>
 </ul>
         </nav>
-         <h3 id="useradd"><code>useradd</code></h3>
-<p>Adds a new user to the system. The user will be assigned default
-values unless further options are specified.</p>
-<table>
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 61%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>useradd &lt;username&gt;</code></td>
-<td>Creates a user and their home directory.</td>
-</tr>
-<tr class="even">
-<td><code>useradd -s &lt;shell&gt; &lt;username&gt;</code></td>
-<td>Specifies a shell for the user (e.g., <code>/bin/bash</code>).</td>
-</tr>
-<tr class="odd">
-<td><code>useradd -g &lt;group&gt; &lt;username&gt;</code></td>
-<td>Assigns the user to a specific group.</td>
-</tr>
-</tbody>
-</table>
-<p>To check user configuration, open the <code>/etc/passwd</code> file.
-The file uses a colon <code>:</code> as the delimiter between columns.
-Each line represents a user and contains the following information in
-tabular format:</p>
-<table>
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 15%" />
-<col style="width: 80%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Col</th>
-<th>Field Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td>Username</td>
-<td>The login name of the user.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td>Password</td>
-<td>Often shown as <code>x</code>, indicating the password is stored
-securely in the shadow file.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td>UID (User ID)</td>
-<td>A unique numerical identifier assigned to the user.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td>GID (Group ID)</td>
-<td>The primary group ID for the user, which links to an entry in
-<code>/etc/group</code>.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td>User Info</td>
-<td>Optional field for additional user details, such as full name or
-description.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td>Home Directory</td>
-<td>The path to the user’s home directory.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td>Shell</td>
-<td>The default shell assigned to the user (e.g.,
-<code>/bin/bash</code>).</td>
-</tr>
-</tbody>
-</table>
-<h3 id="userdel"><code>userdel</code></h3>
-<p>Removes a user from the system. This can optionally remove the user’s
-home directory and mail spool.</p>
-<table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 72%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>userdel &lt;username&gt;</code></td>
-<td>Removes the user but keeps the home directory and files.</td>
-</tr>
-<tr class="even">
-<td><code>userdel -r &lt;username&gt;</code></td>
-<td>Removes the user and deletes their home directory and mail
-spool.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="groupadd"><code>groupadd</code></h3>
-<p>Adds a new group to the system. It assigns default group values
-unless further options are specified.</p>
-<table>
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 58%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>groupadd &lt;groupname&gt;</code></td>
-<td>Creates a new group with the given name.</td>
-</tr>
-<tr class="even">
-<td><code>groupadd -g &lt;gid&gt; &lt;groupname&gt;</code></td>
-<td>Specifies a group ID (GID) for the new group.</td>
-</tr>
-</tbody>
-</table>
-<p>To check group configuration, open the <code>/etc/group</code> file.
-The file defines groups on the system. It uses a colon <code>:</code> as
-a delimiter to separate the columns. Each line represents a group and
-contains the following information:</p>
-<table>
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 14%" />
-<col style="width: 80%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Col</th>
-<th>Field Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td>Group Name</td>
-<td>The name of the group.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td>Password</td>
-<td>Usually marked as <code>x</code>, indicating the group’s password
-(if used) is stored separately.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td>GID (Group ID)</td>
-<td>A unique numerical identifier assigned to the group.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td>User List</td>
-<td>A comma-separated list of usernames who are members of the
-group.</td>
-</tr>
-</tbody>
-</table>
-<p>Now the headers are more descriptive, aligning with the idea of
-explaining each part in a clear way!</p>
-<h3 id="groupdel"><code>groupdel</code></h3>
-<p>Removes a group from the system.</p>
-<table>
-<colgroup>
-<col style="width: 28%" />
-<col style="width: 71%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>groupdel &lt;groupname&gt;</code></td>
-<td>Deletes the group but does not remove users assigned to it.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="usermod"><code>usermod</code></h3>
-<p>Modifies an existing user’s properties such as their group, home
-directory, and shell.</p>
-<table>
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 68%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>usermod -aG &lt;group&gt; &lt;username&gt;</code></td>
-<td>Adds the user to a supplementary group without removing them from
-other groups.</td>
-</tr>
-<tr class="even">
-<td><code>usermod -d &lt;new_home&gt; &lt;username&gt;</code></td>
-<td>Changes the user’s home directory.</td>
-</tr>
-<tr class="odd">
-<td><code>usermod -s &lt;new_shell&gt; &lt;username&gt;</code></td>
-<td>Changes the user’s login shell.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="passwd"><code>passwd</code></h3>
-<p>Changes a user’s password or locks/unlocks the account.</p>
-<table>
-<colgroup>
-<col style="width: 34%" />
-<col style="width: 65%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>passwd &lt;username&gt;</code></td>
-<td>Changes the password for the specified user.</td>
-</tr>
-<tr class="even">
-<td><code>passwd -l &lt;username&gt;</code></td>
-<td>Locks the user’s account.</td>
-</tr>
-<tr class="odd">
-<td><code>passwd -u &lt;username&gt;</code></td>
-<td>Unlocks a locked user account.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="su"><code>su</code></h3>
-<p>Switches the user to another account, usually the root user. It is
-often used to gain administrative privileges.</p>
-<table>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 76%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>su &lt;username&gt;</code></td>
-<td>Switches to the specified user’s account.</td>
-</tr>
-<tr class="even">
-<td><code>su -</code></td>
-<td>Switches to the root user and loads their environment.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="groups"><code>groups</code></h3>
-<p>Displays the groups that the current user or a specified user belongs
-to.</p>
-<table>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>groups</code></td>
-<td>Shows the groups for the current user.</td>
-</tr>
-<tr class="even">
-<td><code>groups &lt;username&gt;</code></td>
-<td>Shows the groups for the specified user.</td>
-</tr>
-</tbody>
-</table> 
+         <h3 id="software-management">Software Management</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rpm</span> <span class="at">-qa</span> <span class="co"># list all installed packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> update <span class="co"># update all installed packages</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> search <span class="op">&lt;</span>package_name<span class="op">&gt;</span> <span class="co"># search for package</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> install <span class="op">&lt;</span>package_name<span class="op">&gt;</span> <span class="co"># install package</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> list installed <span class="co"># list all installed packages</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> info installed <span class="co"># list all installed packages along descriptive info</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> info <span class="op">&lt;</span>package_name<span class="op">&gt;</span> <span class="co"># show descriptive info of package</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">dnf</span> remove <span class="op">&lt;</span>package_name<span class="op">&gt;</span> <span class="co"># uninstall package</span></span></code></pre></div>
+<h3 id="access-control">Access Control</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> useradd <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># creates a user</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> userdel <span class="at">-r</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># deletes a user (-r deletes the user&#39;s home directory)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-aG</span> wheel <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># enables user to escale to root</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> passwd <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># changes user password</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> su <span class="at">-</span> <span class="co"># change to root user</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">su</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># change to user with &lt;username&gt;</span></span></code></pre></div>
+<h3 id="services">Services</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl start <span class="op">&lt;</span>service<span class="op">&gt;</span> <span class="co"># starts a service</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl stop <span class="op">&lt;</span>service<span class="op">&gt;</span> <span class="co"># stops a service</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart <span class="op">&lt;</span>service<span class="op">&gt;</span> <span class="co"># restarts a service</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl enable <span class="op">&lt;</span>service<span class="op">&gt;</span> <span class="co"># enables a service to start on boot</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl disable <span class="op">&lt;</span>service<span class="op">&gt;</span> <span class="co"># disables a service to start on boot</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl list-units <span class="at">--type</span><span class="op">=</span>service <span class="co"># list all services with their status</span></span></code></pre></div>
+<h3 id="process-control">Process Control</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-axf</span> <span class="co"># show process tree</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pidof</span> <span class="op">&lt;</span>p_name<span class="op">&gt;</span> <span class="co"># get process ID given a process name</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">kill</span> <span class="at">-</span><span class="op">&lt;</span>int<span class="op">&gt;</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> <span class="co"># kill process with signal &lt;int&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pkill</span> <span class="op">&lt;</span>p_name<span class="op">&gt;</span> <span class="co"># kill processes associated with &lt;p_name&gt;</span></span></code></pre></div>
+<h3 id="network">Network</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> a <span class="co"># show internet info</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ss</span> <span class="at">-tulnp</span> <span class="co"># display listening TCP and UDP sockets with numeric addresses, ports and associated PID&#39;s.</span></span></code></pre></div>
+<h3 id="file-system">File System</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-ltha</span> <span class="co"># list all files (hidden too) under CWD with long listing format, sorted by newest modified, with human readable sizes</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="at">-</span> <span class="co"># cd to previous directory</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="co"># cd to home</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-avz</span> <span class="op">&lt;</span>source<span class="op">&gt;</span> <span class="op">&lt;</span>target<span class="op">&gt;</span> <span class="co"># copy files from source to target</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-avz</span> <span class="op">&lt;</span>source<span class="op">&gt;</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@<span class="op">&lt;</span>ip<span class="op">&gt;</span>:<span class="op">&lt;</span>target<span class="op">&gt;</span> <span class="co"># copy files from source to target directory of another machine over ssh</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">--use-compress-program</span><span class="op">=&lt;</span>compress_program<span class="op">&gt;</span> -cf <span class="op">&lt;</span>compressed_archive_name<span class="op">&gt;</span> <span class="op">&lt;</span>source<span class="op">&gt;</span> <span class="co"># archive and compress source into file &lt;compressed_archive_name&gt;</span></span></code></pre></div> 
     </body>
 </html>
