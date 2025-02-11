@@ -51,7 +51,7 @@ $endif$
 \settowidth{\maxwidth}{Personal information}
 
 \begin{tblr}{
-  colspec={@{}Q[r,\the\maxwidth]Q[l]@{}},%@{}https://tex.stackexchange.com/a/16261
+  colspec={@{}X[r,\the\maxwidth]X[l]@{}},%@{}https://tex.stackexchange.com/a/16261
   cells={mode=text},
   column{1}={fg=OliveGreen}
 }
@@ -91,7 +91,12 @@ $endif$
     } \\
     $endif$
     $if(experience)$
-    Experience & $experience$ \\ % TODO
+    Experience & {
+        $for(experience)$
+        $experience.description$ ($experience.period$) \\
+        \textcolor{darkgray}{$experience.achievements$} \\
+        $endfor$
+    } \\
     $endif$
     $if(education)$
     Education & {
