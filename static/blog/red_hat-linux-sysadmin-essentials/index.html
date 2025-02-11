@@ -98,6 +98,103 @@ color: var(--yellow);
 padding: 0.05em 0.2em;
 border-radius: 4px;
 }
+.gallery-container {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 16px;
+margin-top: 20px;
+}
+.gallery-item {
+width: 100%;
+height: auto;
+border-radius: 8px;
+transition: transform 0.3s ease;
+}
+.gallery-item:hover {
+transform: scale(1.05);
+}
+.modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: none;
+z-index: 1000;
+background-color: transparent;
+}
+.modal-open {
+display: block;
+}
+.modal-backdrop {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.95);
+backdrop-filter: blur(5px);
+}
+.modal-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+max-width: 90vw;
+max-height: 90vh;
+animation: modal-appear 0.3s ease-out;
+background-color: transparent !important;
+}
+
+.modal *,
+.modal-backdrop,
+.modal-content,
+.modal-image,
+.modal-close {
+background-color: transparent !important;
+}
+.modal-image {
+max-width: 100%;
+max-height: 90vh;
+object-fit: contain;
+border-radius: 8px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+.modal-close {
+position: absolute;
+top: -40px;
+right: -40px;
+width: 40px;
+height: 40px;
+border: none;
+border-radius: 50%;
+background-color: var(--light-background) !important;
+color: var(--foreground);
+font-size: 24px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: background-color 0.2s, transform 0.2s;
+}
+.modal-close:hover {
+background-color: var(--red) !important;
+transform: scale(1.1);
+}
+@keyframes modal-appear {
+from {
+opacity: 0;
+transform: translate(-50%, -48%);
+}
+to {
+opacity: 1;
+transform: translate(-50%, -50%);
+}
+}
+
+.gallery-item {
+cursor: pointer;
+}
 </style>
 <script data-external="1" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
 </head>
@@ -148,6 +245,7 @@ deletion, access</a></li>
 <li><a href="nuggets/cd.html"><code>cd</code></a></li>
 <li><a href="nuggets/rsync.html"><code>rsync</code></a></li>
 <li><a href="nuggets/tar.html"><code>tar</code></a></li>
+<li><a href="nuggets/pwd.html"><code>pwd</code></a></li>
 </ul>
 <h3 id="hardware">Hardware</h3>
 <ul>

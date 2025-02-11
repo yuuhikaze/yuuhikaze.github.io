@@ -1,6 +1,6 @@
 ---
-title: pidof
-date: 2025-02-03
+title: pwd
+date: 2025-02-11
 author: ChatGPT
 ---
 

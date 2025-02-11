@@ -64,4 +64,5 @@ cd # cd to home
 rsync -avz <source> <target> # copy files from source to target
 rsync -avz <source> <user>@<ip>:<target> # copy files from source to target directory of another machine over ssh
 tar --use-compress-program=<compress_program> -cf <compressed_archive_name> <source> # archive and compress source into file <compressed_archive_name>
+pwd # prints current working directory
 ```

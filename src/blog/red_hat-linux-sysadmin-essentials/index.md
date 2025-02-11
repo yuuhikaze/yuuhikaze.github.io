@@ -38,6 +38,7 @@ Read summary of the content below [here](nuggets/tldr.html).
 -   [`cd`](nuggets/cd.html)
 -   [`rsync`](nuggets/rsync.html)
 -   [`tar`](nuggets/tar.html)
+-   [`pwd`](nuggets/pwd.html)
 
 ### Hardware
 
