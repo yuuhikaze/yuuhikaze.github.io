@@ -11,16 +11,16 @@
   },
   "soft_skills": "Leadership, perseverance, teamwork, creativity, integrity, adaptability.",
   "hard_skills": [
-    "Installation, configuration and manteinance of Debian or Arch based systems.",
+    "Installation, configuration and maintenance of Debian or Arch based systems.",
     "Server hosting and management.",
-    "Database infraestructure administration.",
+    "Database infrastructure administration.",
     "Knowledgeable of design patterns, algorithms and clean code paradigms.",
     "Capable of building native and web applications.",
     "Proficient in media conceptualization, design and production."
   ],
   "experience": [
     {
-      "description": "Infraestructure intern at UFSQ",
+      "description": "Infrastructure intern at UFSQ",
       "period": "2024/01-2024/07",
       "achievements": "Zero-downtime migration to newer versions of Oracle Linux, MariaDB/Galera Cluster."
     }
