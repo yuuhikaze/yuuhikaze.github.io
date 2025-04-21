@@ -6,16 +6,15 @@ classDiagram
     TechnicalExpertise <|-- CreativeSuite
 
     class SoftwareDev{
-        +SystemsProgramming: [Rust, C++]
-        +GeneralPurpose: [Python, Java, Lua]
+        +Native: [Rust, C++], [Python, Java, Lua]
         +WebStack: [JavaScript, HTML, CSS]
-        +WebFrameworks: [Svelte]
+        +WebFrameworks: [Svelte/SvelteKit]
         +Tools: [Git, Docker]
         +Databases: [SQLite, PostgreSQL, MariaDB]
     }
 
     class SystemAdmin{
-        +Linux: [Arch/Artix, Debian]
+        +LinuxDistributions: [Arch, Debian, RHEL]
         +Shell: [Bash]
         +CoreUtils
         %% +AndroidTools

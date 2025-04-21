@@ -16,7 +16,7 @@ Endpoint Central offers a feature called [Agent Protection Settings](https://www
 
 2.  Run the modified script as root.
 
-That deletes almost all of the relevant files, what only remains are the services.
+    That deletes almost all of the relevant files, what only remains are the services.
 
 3.  Delete the mentioned services.
 

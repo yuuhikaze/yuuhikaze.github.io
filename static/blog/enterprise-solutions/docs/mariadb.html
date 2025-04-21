@@ -4,9 +4,9 @@
         <meta charset="utf-8" />
         <meta name="generator" content="pandoc" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-                <meta name="author" content="ChatGPT" />
-                 <meta name="dcterms.date" content="2025-01-22" />
-                  <title>dnf</title>
+                <meta name="author" content="Steven Merino" />
+                 <meta name="dcterms.date" content="2025-04-21" />
+                  <title>mariadb</title>
         <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,70 @@ width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
                 <style type="text/css">
 
@@ -905,98 +969,45 @@ content: "−";
     <body>
                  <header id="title-block-header">
             <div class="left">
-                <h1 class="title">dnf</h1>
+                <h1 class="title">MariaDB/MySQL</h1>
                             </div>
             <div class="right">
-                                <p class="author">ChatGPT</p>
-                                 <p class="date">2025-01-22</p>
+                                <p class="author">Steven Merino</p>
+                                 <p class="date">2025-04-21</p>
                             </div>
         </header>
-          <table>
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 33%" />
-<col style="width: 42%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Action</strong></th>
-<th><strong>Command (dnf)</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Check Package Manager Version</strong></td>
-<td><code>dnf --version</code></td>
-<td>Shows the version of the package manager.</td>
-</tr>
-<tr class="even">
-<td><strong>Install a Package</strong></td>
-<td><code>sudo dnf install &lt;package_name&gt;</code></td>
-<td>Installs the specified package.</td>
-</tr>
-<tr class="odd">
-<td><strong>Remove (Uninstall) a Package</strong></td>
-<td><code>sudo dnf remove &lt;package_name&gt;</code></td>
-<td>Removes the specified package.</td>
-</tr>
-<tr class="even">
-<td><strong>List Installed Packages</strong></td>
-<td><code>dnf list installed</code></td>
-<td>Lists all installed packages.</td>
-</tr>
-<tr class="odd">
-<td><strong>Search for a Package</strong></td>
-<td><code>dnf search &lt;package_name&gt;</code></td>
-<td>Searches for packages matching the name.</td>
-</tr>
-<tr class="even">
-<td><strong>Show Package Information</strong></td>
-<td><code>dnf info &lt;package_name&gt;</code></td>
-<td>Displays detailed information about a package.</td>
-</tr>
-<tr class="odd">
-<td><strong>Show Package Information</strong></td>
-<td><code>dnf info installed</code></td>
-<td>Displays detailed information for all packages.</td>
-</tr>
-<tr class="even">
-<td><strong>Update All Packages</strong></td>
-<td><code>sudo dnf check-update</code></td>
-<td>Updates/synchronizes software repositories.</td>
-</tr>
-<tr class="odd">
-<td><strong>Upgrade All Packages</strong></td>
-<td><code>sudo dnf update</code></td>
-<td>Upgrades all installed packages to the latest versions.</td>
-</tr>
-<tr class="even">
-<td><strong>Upgrade a Specific Package</strong></td>
-<td><code>sudo dnf update &lt;package_name&gt;</code></td>
-<td>Upgrades the specified package to the latest version.</td>
-</tr>
-<tr class="odd">
-<td><strong>Clean Up Package Cache</strong></td>
-<td><code>sudo dnf clean all</code></td>
-<td>Clears the local cache of downloaded packages and metadata.</td>
-</tr>
-<tr class="even">
-<td><strong>List Available Repositories</strong></td>
-<td><code>dnf repolist</code></td>
-<td>Lists all enabled package repositories.</td>
-</tr>
-<tr class="odd">
-<td><strong>Enable a Repository</strong></td>
-<td><code>sudo dnf config-manager --set-enabled &lt;repo&gt;</code></td>
-<td>Enables a specific repository.</td>
-</tr>
-<tr class="even">
-<td><strong>Disable a Repository</strong></td>
-<td><code>sudo dnf config-manager --set-disabled &lt;repo&gt;</code></td>
-<td>Disables a specific repository.</td>
-</tr>
-</tbody>
-</table> 
+                 <nav id="TOC" role="doc-toc">
+             <ul>
+<li><a href="#reset-root-password" id="toc-reset-root-password">Reset
+root password</a></li>
+</ul>
+        </nav>
+         <h3 id="reset-root-password">Reset root password</h3>
+<blockquote>
+<p>This guide is intended for users who have forgotten the root password
+and do not have UNIX authentication enabled.</p>
+</blockquote>
+<ol type="1">
+<li><p>Start MariaDB in safe mode.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl stop mariadb</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mariadbd-safe <span class="at">--skip-grant-tables</span> <span class="kw">&amp;</span> <span class="co"># Using mysql? Try: mysqld_safe</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mariadb <span class="at">-u</span> root mysql</span></code></pre></div></li>
+<li><p>Reset password and enable UNIX socket authentication.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">FLUSH</span> <span class="kw">PRIVILEGES</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="fu">USER</span> <span class="st">&#39;root&#39;</span>@<span class="st">&#39;localhost&#39;</span> <span class="kw">IDENTIFIED</span> <span class="kw">BY</span> <span class="st">&#39;&lt;password&gt;&#39;</span>; <span class="co">-- Reset root password</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> mysql.global_priv <span class="kw">SET</span> priv<span class="op">=</span>json_set( <span class="co">-- Enable UNIX socket authentication</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    priv,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;$.password_last_changed&#39;</span>, UNIX_TIMESTAMP(),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;$.plugin&#39;</span>, <span class="st">&#39;mysql_native_password&#39;</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;$.auth_or&#39;</span>, json_array(json_object(), json_object(<span class="st">&#39;plugin&#39;</span>, <span class="st">&#39;unix_socket&#39;</span>))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>) <span class="kw">WHERE</span> <span class="fu">User</span><span class="op">=</span><span class="st">&#39;root&#39;</span> <span class="kw">AND</span> Host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>;</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FLUSH</span> <span class="kw">PRIVILEGES</span>;</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>quit;</span></code></pre></div></li>
+<li><p>Stop the MariaDB instance running in safe mode and start the
+service as regular.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mariadb-admin <span class="at">-u</span> root shutdown <span class="co"># Using mysql? Try: mysqladmin</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl mariadb start</span></code></pre></div></li>
+</ol>
+<p>Now you should be able to log in without a problem!</p> 
     </body>
 </html>

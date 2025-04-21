@@ -8,13 +8,14 @@ author: Steven Merino
 
 ```bash
 rpm -qa # list all installed packages
-dnf update # update all installed packages
+dnf check-udpate # update/synchronize software repositories
+sudo dnf update # upgrade all installed packages
 dnf search <package_name> # search for package
-dnf install <package_name> # install package
+sudo dnf install <package_name> # install package
 dnf list installed # list all installed packages
 dnf info installed # list all installed packages along descriptive info
 dnf info <package_name> # show descriptive info of package
-dnf remove <package_name> # uninstall package
+sudo dnf remove <package_name> # uninstall package
 ```
 
 ### Access Control
@@ -58,7 +59,7 @@ ss -tulnp # display listening TCP and UDP sockets with numeric addresses, ports 
 ### File System
 
 ```bash
-ls -ltha # list all files (hidden too) under CWD with long listing format, sorted by newest modified, with human readable sizes
+ls -ltrha # list all files (hidden too) under CWD with long listing format, sorted by newest modified, printed in reverse order, with human readable sizes
 cd - # cd to previous directory
 cd # cd to home
 rsync -avz <source> <target> # copy files from source to target
