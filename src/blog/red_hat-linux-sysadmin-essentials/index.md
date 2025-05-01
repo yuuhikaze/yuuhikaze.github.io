@@ -29,6 +29,7 @@ Read summary of the content below [here](nuggets/tldr.html).
 -   [`ip addr show`](nuggets/ip-a.html)
 -   [`ss`](nuggets/ss.html)
 -   [`wget`](nuggets/wget.html)
+-   [`ssh`, `git`](nuggets/ssh-git.html)
 
 ### File System
 
