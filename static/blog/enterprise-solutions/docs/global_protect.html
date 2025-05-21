@@ -5,8 +5,8 @@
         <meta name="generator" content="pandoc" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
                 <meta name="author" content="Steven Merino" />
-                 <meta name="dcterms.date" content="2025-05-01" />
-                  <title>ssh-git</title>
+                 <meta name="dcterms.date" content="2025-05-04" />
+                  <title>global_protect</title>
         <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -969,65 +969,100 @@ content: "−";
     <body>
                  <header id="title-block-header">
             <div class="left">
-                <h1 class="title">SSH/Git</h1>
+                <h1 class="title">Palo Alto GlobalProtect VPN</h1>
                             </div>
             <div class="right">
                                 <p class="author">Steven Merino</p>
-                                 <p class="date">2025-05-01</p>
+                                 <p class="date">2025-05-04</p>
                             </div>
         </header>
                  <nav id="TOC" role="doc-toc">
              <ul>
-<li><a href="#ssh" id="toc-ssh">SSH</a></li>
-<li><a href="#git" id="toc-git">Git</a>
-<ul>
-<li><a href="#how-to-authenticate-through-ssh" id="toc-how-to-authenticate-through-ssh">How to authenticate through
-SSH?</a></li>
-</ul></li>
+<li><a href="#run-on-linux" id="toc-run-on-linux">“Run on
+Linux”</a></li>
 </ul>
         </nav>
-         <h1 id="ssh">SSH</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-p</span> 40351 <span class="op">&lt;</span>user<span class="op">&gt;</span>@<span class="op">&lt;</span>ip<span class="op">&gt;</span> <span class="co"># connect to server with given user and ip through port 40351</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-avz</span> <span class="at">-e</span> <span class="st">&#39;ssh -p 40351&#39;</span> <span class="op">&lt;</span>src<span class="op">&gt;</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@<span class="op">&lt;</span>ip<span class="op">&gt;</span>:~/ <span class="co"># send &lt;src&gt; to ~/ on remote server over SSH through port 40351</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-vT</span> <span class="at">-i</span> ~/.ssh/<span class="op">&lt;</span>id_key<span class="op">&gt;</span> git@github.com <span class="co"># test authentication to GitHub using a particular identity key</span></span></code></pre></div>
-<h1 id="git">Git</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init <span class="co"># initialize a local git repository</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span> <span class="co"># track all changes made</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&#39;initial commit&#39;</span> <span class="co"># commit tracked changes</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="op">&lt;</span>remote<span class="op">&gt;</span> add <span class="op">&lt;</span>remote-url<span class="op">&gt;</span> <span class="co"># add remote repository. &lt;remote&gt; is commonly set to &quot;origin&quot;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span> <span class="co"># show information about remote repositories configured</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url <span class="op">&lt;</span>remote<span class="op">&gt;</span> <span class="op">&lt;</span>remote-url<span class="op">&gt;</span> <span class="co"># change the &lt;remote-url&gt; of &lt;remote&gt;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="op">&lt;</span>remote<span class="op">&gt;</span> <span class="op">&lt;</span>branch<span class="op">&gt;</span> <span class="co"># push &lt;branch&gt; to &lt;remote&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="co"># bring changes from remote</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="op">&lt;</span>commit-checksum<span class="op">&gt;</span> <span class="co"># erase all non commited changes</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clean <span class="at">-f</span> <span class="at">-d</span> <span class="co"># remove non tracked newly created files</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase <span class="at">-i</span> <span class="op">&lt;</span>commit-checksum<span class="op">&gt;</span> <span class="co"># start interactive rebasing. CAREFUL only do this if you are experienced</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>remote-url<span class="op">&gt;</span> <span class="co"># clone contents of &lt;remote-url&gt; on CWD</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">-c</span> <span class="st">&quot;core.sshCommand=ssh -i ~/.ssh/&lt;id_key&gt; -F /dev/null&quot;</span> <span class="op">&lt;</span>remote-url<span class="op">&gt;</span> <span class="co"># clone contents of &lt;remote-url&gt; on CWD using a particular identity key (remembers identity key for future operations that require authentication)</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> show <span class="op">&lt;</span>commit-checksum<span class="op">&gt;</span>:<span class="op">&lt;</span>file<span class="op">&gt;</span> <span class="co"># show &lt;file&gt; of given commit</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="op">&lt;</span>file<span class="op">&gt;</span> <span class="co"># revert changes made to &lt;file&gt;</span></span></code></pre></div>
+         <h3 id="run-on-linux">“Run on Linux”</h3>
 <blockquote>
-<p>Identity key = private key</p>
+<p>Went through all the following trouble without checking if
+GlobalProtect for Linux exists (it does). Anyways, great experience,
+learnt a lot about tunnels and proxies.</p>
 </blockquote>
-<h3 id="how-to-authenticate-through-ssh">How to authenticate through
-SSH?</h3>
-<p><strong>Personal access</strong></p>
-<p>Grants read/write access to all repositories.</p>
+<p><strong>Make VPN network available through proxy</strong></p>
+<p>On Linux</p>
 <ol type="1">
-<li><p>Generate a public/private key pair.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="co"># Enter passphrase for added security</span></span></code></pre></div></li>
-<li><p>On GitHub
-<code>Profile → Settings → SSH and GPG keys → New SSH key</code>. Enter
-content of public key <code>~/.ssh/*.pub</code>.</p></li>
+<li><p>Get Windows 10 LTSC ISO: <a href="https://massgrave.dev/windows_ltsc_links#ltsc-2021-mirror-links" class="uri">https://massgrave.dev/windows_ltsc_links#ltsc-2021-mirror-links</a>
+<!-- 1.  Create a bridge device. --></p></li>
+<li><p>Configure a virtual machine with said image.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Disk</td>
+<td>35 GiB</td>
+</tr>
+<tr class="even">
+<td>Memory</td>
+<td>3072 MiB</td>
+</tr>
+<tr class="odd">
+<td>CPUs</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>OS</td>
+<td>Windows 10 Enterprise N LTSC Evaluation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>N versions exist to comply with EU regulations requiring Microsoft to
+offer Windows without bundled media software.</p>
+</blockquote></li>
 </ol>
-<p><strong>Deploy keys</strong></p>
-<p>Grants read/write(opt-in) access to a certain repository.</p>
+<p>On Windows 10 LTSC</p>
 <ol type="1">
-<li><p>Generate a public/private key pair.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="co"># Enter passphrase for added security</span></span></code></pre></div></li>
-<li><p>On GitHub
-<code>Repository → Settings → Deploy Keys → Add deploy key</code>. Enter
-content of public key <code>~/.ssh/*.pub</code>.</p></li>
-</ol> 
+<li><p>Enable and start SSH.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Add-WindowsCapability <span class="op">-</span>Online <span class="op">-</span>Name OpenSSH<span class="op">.</span><span class="fu">Server</span><span class="op">~~~~</span><span class="dv">0.0</span><span class="op">.</span><span class="dv">1.0</span> <span class="co"># &quot;install&quot; SSH</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Service</span> <span class="op">-</span>Name sshd <span class="op">-</span>StartupType Automatic <span class="co"># start SSH service on boot</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Start-Service</span> sshd <span class="co"># start SSH service now</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Service</span> sshd <span class="co"># check SSH status</span></span></code></pre></div></li>
+<li><p>Install GlobalProtect and connect to it.</p></li>
+</ol>
+<p>Back on Linux</p>
+<ol type="1">
+<li><p>Create a SOCKS5 proxy over an SSH tunnel.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-D</span> 1080 <span class="op">&lt;</span>user<span class="op">&gt;</span>@<span class="op">&lt;</span>win10-vm-ip<span class="op">&gt;</span></span></code></pre></div>
+<blockquote>
+<p><code>1080</code>: Local port on which the SOCKS5 proxy listens, can
+be any unused port (typically anything above 1024).</p>
+</blockquote></li>
+</ol>
+<p><strong>Establish an SSH connection to a remote machine through the
+proxy</strong></p>
+<p>On Linux</p>
+<ol type="1">
+<li><p>Install Proxychains. Once done that, edit the configuration
+<code>/etc/proxychains.conf</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[ProxyList]</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">socks5</span>  127.0.0.1 1080</span></code></pre></div></li>
+<li><p>Establish the SSH connection.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">proxychains</span> ssh <span class="op">&lt;</span>user<span class="op">&gt;</span>@<span class="op">&lt;</span>remote-machine-ip<span class="op">&gt;</span></span></code></pre></div></li>
+</ol>
+<p><strong>Forward traffic from the proxy to your machine</strong></p>
+<blockquote>
+<p>Useful, for example, to connect to a service hosted on your machine
+through a domain only resolvable through the VPN network.</p>
+</blockquote>
+<p>On Windows</p>
+<ol type="1">
+<li><p>Edit SSH config <code>C:\ProgramData\ssh\sshd_config</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">GatewayPorts</span> yes <span class="co"># Controls whether remote forwarded ports bind to non-local interfaces, i.e. 0.0.0.0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">AllowTcpForwarding</span> yes <span class="co"># Controls whether SSH port forwarding is permitted (usually enabled by default)</span></span></code></pre></div></li>
+<li><p>Restart SSH.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Restart-Service</span> sshd</span></code></pre></div></li>
+</ol>
+<p>On Linux</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-R</span> <span class="op">&lt;</span>target-port<span class="op">&gt;</span>:localhost:<span class="op">&lt;</span>local-port<span class="op">&gt;</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@<span class="op">&lt;</span>win10-vm-ip<span class="op">&gt;</span> <span class="co"># binds &lt;target-port&gt; on Windows 10 LTSC VM and forwards traffic from it to &lt;local-port&gt; on localhost.</span></span></code></pre></div> 
     </body>
 </html>

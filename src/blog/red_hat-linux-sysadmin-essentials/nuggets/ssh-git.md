@@ -28,6 +28,8 @@ git clean -f -d # remove non tracked newly created files
 git rebase -i <commit-checksum> # start interactive rebasing. CAREFUL only do this if you are experienced
 git clone <remote-url> # clone contents of <remote-url> on CWD
 git clone -c "core.sshCommand=ssh -i ~/.ssh/<id_key> -F /dev/null" <remote-url> # clone contents of <remote-url> on CWD using a particular identity key (remembers identity key for future operations that require authentication)
+git show <commit-checksum>:<file> # show <file> of given commit
+git restore <file> # revert changes made to <file>
 ```
 
 > Identity key = private key
