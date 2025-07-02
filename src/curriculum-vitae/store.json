@@ -20,9 +20,14 @@
   ],
   "experience": [
     {
-      "description": "Infrastructure intern at UFSQ",
-      "period": "2024/01-2024/07",
-      "achievements": "Zero-downtime migration to newer versions of Oracle Linux, MariaDB/Galera Cluster."
+      "description": "Infrastructure Intern at UFSQ",
+      "period": "2024/01–2024/07",
+      "achievements": [
+        "Configuration of a highly available Kubernetes cluster, strengthening service resilience and scalability.",
+        "Zero-downtime migration to newer versions of Oracle Linux and clusterization of MariaDB databases, addressing obsolescence and ensuring platform reliability.",
+        "Integration of CI/CD pipelines into projects developed by fellow interns, enhancing traceability and minimizing delivery friction.",
+        "Creation of safeguards and processes to minimize operational errors, enhancing system safety."
+      ]
     }
   ],
   "education": [

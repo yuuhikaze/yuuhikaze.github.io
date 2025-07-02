@@ -94,7 +94,9 @@ $endif$
     Experience & {
         $for(experience)$
         $experience.description$ ($experience.period$) \\
+        $for(experience.achievements)$
         \textcolor{darkgray}{$experience.achievements$} \\
+        $endfor$
         $endfor$
     } \\
     $endif$

@@ -20,3 +20,7 @@ author: ChatGPT
 | **List Available Repositories**   | `dnf repolist`                                  | Lists all enabled package repositories.                     |
 | **Enable a Repository**           | `sudo dnf config-manager --set-enabled <repo>`  | Enables a specific repository.                              |
 | **Disable a Repository**          | `sudo dnf config-manager --set-disabled <repo>` | Disables a specific repository.                             |
+| **Show Package History**          | `dnf history`                                   | Displays the transaction history of package operations.     |
+| **Show Specific History Info**    | `dnf history info <ID>`                         | Shows detailed information for a specific transaction ID.   |
+| **List User-Installed Packages**  | `dnf history userinstalled`                     | Lists packages explicitly installed by the user.            |
+| **Show Package Dependencies**     | `yum deplist <package_name>`                    | Lists dependencies for a given package (using yum command). |
