@@ -2,12 +2,12 @@
 
 ### Endpoint Central
 
--   [Uninstall UEMSAgent without token](docs/endpoint-central.html#uninstall-uemsagent-without-token)
+-   [Uninstall UEMSAgent without token](docs/endpoint-central.md#uninstall-uemsagent-without-token)
 
 ### MariaDB/MySQL
 
--   [Reset root password](docs/mariadb.html#reset-root-password)
+-   [Reset root password](docs/mariadb.md#reset-root-password)
 
 ### Palo Alto GlobalProtect VPN
 
--   ["Run on Linux"](docs/global_protect.html#run-on-linux)
+-   ["Run on Linux"](docs/global_protect.md#run-on-linux)
