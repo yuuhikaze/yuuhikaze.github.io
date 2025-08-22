@@ -2,42 +2,42 @@
 classDiagram
     TechnicalExpertise <|-- SoftwareDev
     TechnicalExpertise <|-- SystemAdmin
-    TechnicalExpertise <|-- Security
+    TechnicalExpertise <|-- Cybersecurity
     TechnicalExpertise <|-- CreativeSuite
 
     class SoftwareDev{
-        +Native: [Go, C++, Rust], [Python, Java, Lua]
+        +Native: [C/C++, Rust, Zig, Go], [Python, Java, Lua]
         +WebStack: [JavaScript, HTML, CSS]
         +WebFrameworks: [Svelte/SvelteKit]
-        +Tools: [Git, Docker]
         +Databases: [SQLite, PostgreSQL, MariaDB]
+        +Graphics: [OpenGL]
+        +VersionControl: [Git]
+        +Robotics: [ROS]
     }
 
     class SystemAdmin{
-        +LinuxDistributions: [Arch, Debian, RHEL]
-        +Shell: [Bash]
-        +CoreUtils
+        +LinuxDistributions: [Arch, Debian, RHEL, NixOS]
+        +Virtualization: [QEMU/KVM, VMware]
+        +Containerization: [Docker]
+        +Orchestration: [Kubernetes]
+        +LoadBalancing: [NGINX, Traefik, HAProxy]
+        +Misc: [Bash, PlantUML]
         %% +AndroidTools
     }
 
-    class Security{
-        +Cryptography
-        +NetworkSecurity
-        +PenTesting: [nmap, hashcat]
-        +Forensic: [photorec]
-        +Protocols: [SSH, Tor]
+    class Cybersecurity{
+        +Cryptography: [OpenSSL, GPG]
+        +ReverseEngineering: [Assembly, Smali]
+        +PenTesting: [nmap, hashcat, Wireshark]
+        +Forensics: [photorec]
+        +PrivateNetworks: [Tor, I2P]
+        +Protocols: [TLS, SSH]
         +Tools: [curl, wget]
     }
 
     class CreativeSuite{
         +3D: [Blender]
         +2D: [Krita, Inkscape]
-        +Video: [Kdenlive]
+        +Video: [OBS, Kdenlive]
         +Audio: [Audacity]
-    }
-
-    Security <|-- Cryptography
-    class Cryptography{
-        +Symmetric: [OpenSSL/AES256]
-        +Asymmetric: [GPG/RSA, ED25519]
     }
