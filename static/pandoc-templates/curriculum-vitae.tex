@@ -59,7 +59,7 @@ $endif$
     \includegraphics[width=\linewidth]{$headshot$} & ~ \\
     $endif$
     $if(personal_information)$
-    Personal information & {
+    Personal information & {%
         $if(personal_information.phone)$
         Phone: $personal_information.phone$ \\
         $endif$
@@ -84,14 +84,14 @@ $endif$
     Soft skills & $soft_skills$ \\
     $endif$
     $if(hard_skills)$
-    Hard skills & {
+    Hard skills & {%
         $for(hard_skills)$
         $hard_skills$ \\
         $endfor$
     } \\
     $endif$
     $if(experience)$
-    Experience & {
+    Experience & {%
         $for(experience)$
         $experience.description$ ($experience.period$) \\
         $for(experience.achievements)$
@@ -101,7 +101,7 @@ $endif$
     } \\
     $endif$
     $if(education)$
-    Education & {
+    Education & {%
         $for(education)$
         $education.degree$ ($education.period$) \\
         \textcolor{darkgray}{$education.institution$} \\

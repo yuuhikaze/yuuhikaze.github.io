@@ -17,10 +17,11 @@ classDiagram
 
     class SystemAdmin{
         +LinuxDistributions: [Arch, Debian, RHEL, NixOS]
-        +Virtualization: [QEMU/KVM, VMware]
+        +Virtualization: [QEMU/KVM, VMware, Incus]
         +Containerization: [Docker]
-        +Orchestration: [Kubernetes]
+        +Orchestration: [K8s]
         +LoadBalancing: [NGINX, Traefik, HAProxy]
+        +Automation: [Ansible]
         +Misc: [Bash, PlantUML]
         %% +AndroidTools
     }
