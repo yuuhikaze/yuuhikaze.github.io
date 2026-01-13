@@ -7,7 +7,7 @@
     "linked_in": "https://www.linkedin.com/in/steven-merino-3453a0344",
     "github": "https://github.com/yuuhikaze",
     "website": "https://yuuhikaze.github.io",
-    "languages": "Spanish (native), english (fluent), german (basic), japanese (basic)"
+    "languages": "Spanish (native), English (fluent), German (basic), Japanese (basic)"
   },
   "soft_skills": "Leadership, perseverance, teamwork, creativity, integrity, adaptability.",
   "hard_skills": [
@@ -20,7 +20,7 @@
   ],
   "experience": [
     {
-      "description": "Infrastructure Intern at UFSQ",
+      "description": "Infrastructure Intern at USFQ",
       "period": "2025/01–2025/07",
       "achievements": [
         "Zero-downtime migration to newer versions of Oracle Linux and clusterization of MariaDB databases, addressing obsolescence and ensuring platform reliability.",
@@ -29,10 +29,12 @@
       ]
     },
     {
-      "description": "Infrastructure Consultant at UFSQ",
+      "description": "Infrastructure Consultant at USFQ",
       "period": "2025/08–2026/02",
       "achievements": [
-        "Configuration of a highly available Kubernetes cluster, strengthening service resilience and scalability."
+        "Architected a production-grade hub-spoke Kubernetes infrastructure on Oracle Linux 9.x, implementing SNI-based HAProxy routing for multi-cluster API access and high-availability service delivery.",
+        "Engineered a hybrid networking layer using Calico VXLAN to support seamless Linux and Windows worker node integration, coupled with Longhorn distributed storage to ensure data persistence and replication.",
+        "Automated the end-to-end GitOps lifecycle using Ansible for cluster bootstrapping and ArgoCD for manifest orchestration, integrating OpenBao for secret management and Velero for S3-backed disaster recovery."
       ]
     }
   ],
@@ -40,7 +42,7 @@
     {
       "degree": "Bachelor’s degree in Computer Science",
       "institution": "Universidad San Francisco de Quito",
-      "description": "Coursing at the moment.",
+      "description": "Degree in progress.",
       "period": "2023-202?"
     }
   ],
