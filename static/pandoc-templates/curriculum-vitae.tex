@@ -45,12 +45,20 @@ $if(name)$
 {\Huge $name$}
 \hfill{\it\footnotesize Updated \today}
 $endif$
+
 \vspace{5pt}
 
 \newlength{\maxwidth}
 \settowidth{\maxwidth}{Personal information}
 
-\begin{tblr}{
+% Remove continuation text from longtblr
+\DefTblrTemplate{contfoot-text}{default}{}
+\DefTblrTemplate{conthead-text}{default}{}
+
+\begin{longtblr}[
+  label=none,
+  entry=none
+]{
   colspec={@{}X[r,\the\maxwidth]X[l]@{}},%@{}https://tex.stackexchange.com/a/16261
   cells={mode=text},
   column{1}={fg=OliveGreen}
@@ -95,7 +103,7 @@ $endif$
         $for(experience)$
         $experience.description$ ($experience.period$) \\
         $for(experience.achievements)$
-        \textcolor{darkgray}{$experience.achievements$} \\
+        \textcolor{darkgray}{$experience.achievements$} \\[3pt]
         $endfor$
         $endfor$
     } \\
@@ -118,5 +126,5 @@ $endif$
     $if(personal_interests)$
     Personal interests & $personal_interests$ \\
     $endif$
-\end{tblr}
+\end{longtblr}
 \end{document}
